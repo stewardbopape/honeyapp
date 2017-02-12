@@ -1,0 +1,1599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HoneyComb.BusinessObjects.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MCR_ANSWERS">
+          <Key>
+            <PropertyRef Name="ANSWERS_ID" />
+          </Key>
+          <Property Name="ANSWERS_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="QUESTIONS_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="ANSWER_DESCRIPTION" Type="varchar2" MaxLength="335" Nullable="false" />
+          <Property Name="ANSWER1" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="ANSWER2" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="ANSWER3" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="ANSWER4" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="ANSWER5" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="INCORRECT_ANSWER" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="CORRECT_ANSWER" Type="varchar2" MaxLength="235" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_ASSESSMENT">
+          <Key>
+            <PropertyRef Name="ASSESSMENT_ID" />
+          </Key>
+          <Property Name="ASSESSMENT_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="ASSESSMENT_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="PAGE_NUMBER" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CHAPTER_NUMBER" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CHAPTER_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ACTIVE" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_ASSESSMENT_WEIGHT">
+          <Key>
+            <PropertyRef Name="ASSESSMENT_WEIGHT_ID" />
+          </Key>
+          <Property Name="ASSESSMENT_WEIGHT_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="WEIGHT" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CITY">
+          <Key>
+            <PropertyRef Name="CITY_ID" />
+          </Key>
+          <Property Name="CITY_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="DISTRICT_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="CITY_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT">
+          <Key>
+            <PropertyRef Name="CONTENT_ID" />
+          </Key>
+          <Property Name="CONTENT_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="CONTENT_TYPE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="CONTENT_SIZE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="ACTIVATED" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_ALLOCATE">
+          <Key>
+            <PropertyRef Name="ALLOCATE_ID" />
+          </Key>
+          <Property Name="ALLOCATE_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="CONTENT_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="SCHOOL_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="GRADE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SUBJECT_ID" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="SCHOOL_SUBJECT_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="ALLOCATED" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_ENCRYPTION">
+          <Key>
+            <PropertyRef Name="ENCRYPTION_ID" />
+          </Key>
+          <Property Name="ENCRYPTION_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="ENCRYPTED_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_INFO">
+          <Key>
+            <PropertyRef Name="CONTENT_INFO_ID" />
+          </Key>
+          <Property Name="CONTENT_INFO_ID" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="CONTENT_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="SUBJECT_ID" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="TEXT_ISBN" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="TEXT_TITLE" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="TEXT_AUTHOR" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="NO_OF_CHAPTERS" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="NO_OF_PAGES" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="TEXT_DESCRIPTION" Type="varchar2" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_LOCATION">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="CONTENT_TITLE" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="CONTENT_URL" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="SMALL_THUMBNAIL_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="SMALL_THUMBNAIL_URL" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="MEDIUM_THUMBNAIL_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="MEDIUM_THUMBNAIL_URL" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="LARGE_THUMBNAIL_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="LARGE_THUMBNAIL_URL" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTENT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTENT_TYPE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="CONTENT_TYPE_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_COUNTRY">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="COUNTRY_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_DISTRICT">
+          <Key>
+            <PropertyRef Name="DISTRICT_ID" />
+          </Key>
+          <Property Name="DISTRICT_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="PROVINCE_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DISTRICT_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_EXAM_BOARD">
+          <Key>
+            <PropertyRef Name="EXAM_BOARD_ID" />
+          </Key>
+          <Property Name="EXAM_BOARD_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="EXAM_BOARD_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_GRADE">
+          <Key>
+            <PropertyRef Name="GRADE_ID" />
+          </Key>
+          <Property Name="GRADE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="EXAM_BOARD_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="GRADE_NAME" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="GRADE_DESCRIPT" Type="varchar2" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_LANGUAGE_LEVEL">
+          <Key>
+            <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+          </Key>
+          <Property Name="LANGUAGE_LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LANGUAGE_LEVEL_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_LOGIN">
+          <Key>
+            <PropertyRef Name="USER_CODE" />
+            <PropertyRef Name="LOGIN_USERNAME" />
+          </Key>
+          <Property Name="USER_CODE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="LOGIN_USERNAME" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="LOGIN_PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="USER_TYPE" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="LOGIN_ATTEMPTS" Type="number" Precision="38" Scale="0" />
+          <Property Name="USER_STATUS" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="LOGIN_TIMESTAMP" Type="timestamp" Precision="6" />
+          <Property Name="LOGIN_IMAGE_URL" Type="varchar2" MaxLength="160" />
+        </EntityType>
+        <EntityType Name="MCR_PERSONS">
+          <Key>
+            <PropertyRef Name="USER_CODE" />
+            <PropertyRef Name="LOGIN_USERNAME" />
+          </Key>
+          <Property Name="USER_CODE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="LOGIN_USERNAME" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="LOGIN_PASSWORD" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="GENDER" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="EMAIL_ADDRESS" Type="varchar2" MaxLength="50" />
+          <Property Name="DATE_OF_BIRTH" Type="date" Nullable="false" />
+          <Property Name="IDENTITY_NUMBER" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NATIONALITY" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="ROLE_CODE" Type="varchar2" MaxLength="15" Nullable="false" />
+          <Property Name="USER_STATUS" Type="varchar2" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_PROVINCE">
+          <Key>
+            <PropertyRef Name="PROVINCE_ID" />
+          </Key>
+          <Property Name="PROVINCE_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="COUNTRY_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="PROVINCE_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_QUESTION_TYPE">
+          <Key>
+            <PropertyRef Name="QUESTION_TYPE_ID" />
+          </Key>
+          <Property Name="QUESTION_TYPE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="QUESTION_TYPE_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="ABRREVIATION" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_QUESTIONS">
+          <Key>
+            <PropertyRef Name="QUESTIONS_ID" />
+          </Key>
+          <Property Name="QUESTIONS_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="ASSESSMENT_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="QUESTION_TYPE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="QUESTION_DESCRIPTION" Type="varchar2" MaxLength="235" Nullable="false" />
+          <Property Name="PAGE_NUMBER" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CHAPTER_NUMBER" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="CHAPTER_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ACTIVE" Type="varchar2" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_ROLES">
+          <Key>
+            <PropertyRef Name="ROLE_CODE" />
+          </Key>
+          <Property Name="ROLE_CODE" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="ROLE_DESCRIPTION" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL">
+          <Key>
+            <PropertyRef Name="SCHOOL_ID" />
+          </Key>
+          <Property Name="SCHOOL_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="COUNTRY_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="PROVINCE_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DISTRICT_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="CITY_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="EXAM_BOARD_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="SCHOOL_TYPE_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="SCHOOL_NAME" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="SCHOOL_LANGUAGE" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="CONTACT_PERSON" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="CONTACT_NUMBER" Type="varchar2" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL_LEVEL">
+          <Key>
+            <PropertyRef Name="SCHOOL_LEVEL_ID" />
+          </Key>
+          <Property Name="SCHOOL_LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL_TYPE">
+          <Key>
+            <PropertyRef Name="SCHOOL_TYPE_ID" />
+          </Key>
+          <Property Name="SCHOOL_TYPE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SCHOOL_TYPE_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SUBJECT">
+          <Key>
+            <PropertyRef Name="SUBJECT_ID" />
+          </Key>
+          <Property Name="SUBJECT_ID" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="GRADE_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LANGUAGE_LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SUBJECT_NAME" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="SUBJECT_DESCRIPTION" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SUBJECT_GROUP">
+          <Key>
+            <PropertyRef Name="SUBJECT_GROUP_ID" />
+          </Key>
+          <Property Name="SUBJECT_GROUP_ID" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_DESCRIPT" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_WEIGHT_LEVEL">
+          <Key>
+            <PropertyRef Name="LEVEL_ID" />
+          </Key>
+          <Property Name="LEVEL_ID" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LEVEL_NAME" Type="varchar2" MaxLength="8" Nullable="false" />
+          <Property Name="LEVEL_DESCRIPTION" Type="varchar2" MaxLength="220" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ASSESSMENT">
+          <End Role="MCR_ASSESSMENT" Type="Self.MCR_ASSESSMENT" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_ASSESSMENT">
+              <PropertyRef Name="ASSESSMENT_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="ASSESSMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_INFO">
+          <End Role="MCR_CONTENT_INFO" Type="Self.MCR_CONTENT_INFO" Multiplicity="1" />
+          <End Role="MCR_CONTENT_LOCATION" Type="Self.MCR_CONTENT_LOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_INFO">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_LOCATION">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_INFO2">
+          <End Role="MCR_CONTENT_INFO" Type="Self.MCR_CONTENT_INFO" Multiplicity="1" />
+          <End Role="MCR_ASSESSMENT" Type="Self.MCR_ASSESSMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_INFO">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Principal>
+            <Dependent Role="MCR_ASSESSMENT">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_TYPE">
+          <End Role="MCR_CONTENT_TYPE" Type="Self.MCR_CONTENT_TYPE" Multiplicity="1" />
+          <End Role="MCR_CONTENT" Type="Self.MCR_CONTENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_TYPE">
+              <PropertyRef Name="CONTENT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT">
+              <PropertyRef Name="CONTENT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNTRY">
+          <End Role="MCR_COUNTRY" Type="Self.MCR_COUNTRY" Multiplicity="1" />
+          <End Role="MCR_PROVINCE" Type="Self.MCR_PROVINCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_COUNTRY">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Principal>
+            <Dependent Role="MCR_PROVINCE">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DISTRICT">
+          <End Role="MCR_DISTRICT" Type="Self.MCR_DISTRICT" Multiplicity="1" />
+          <End Role="MCR_CITY" Type="Self.MCR_CITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_DISTRICT">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Principal>
+            <Dependent Role="MCR_CITY">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXAM_BOARD">
+          <End Role="MCR_EXAM_BOARD" Type="Self.MCR_EXAM_BOARD" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_EXAM_BOARD">
+              <PropertyRef Name="EXAM_BOARD_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="EXAM_BOARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRADE">
+          <End Role="MCR_GRADE" Type="Self.MCR_GRADE" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_GRADE">
+              <PropertyRef Name="GRADE_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="GRADE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LANGUAGE_LEVEL">
+          <End Role="MCR_LANGUAGE_LEVEL" Type="Self.MCR_LANGUAGE_LEVEL" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_LANGUAGE_LEVEL">
+              <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROVINCE">
+          <End Role="MCR_PROVINCE" Type="Self.MCR_PROVINCE" Multiplicity="1" />
+          <End Role="MCR_DISTRICT" Type="Self.MCR_DISTRICT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_PROVINCE">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Principal>
+            <Dependent Role="MCR_DISTRICT">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QUESTION_TYPE">
+          <End Role="MCR_QUESTION_TYPE" Type="Self.MCR_QUESTION_TYPE" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_QUESTION_TYPE">
+              <PropertyRef Name="QUESTION_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="QUESTION_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QUESTIONS">
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="1" />
+          <End Role="MCR_ANSWERS" Type="Self.MCR_ANSWERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_QUESTIONS">
+              <PropertyRef Name="QUESTIONS_ID" />
+            </Principal>
+            <Dependent Role="MCR_ANSWERS">
+              <PropertyRef Name="QUESTIONS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL_LEVEL">
+          <End Role="MCR_SCHOOL_LEVEL" Type="Self.MCR_SCHOOL_LEVEL" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL_LEVEL">
+              <PropertyRef Name="SCHOOL_LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL_TYPE">
+          <End Role="MCR_SCHOOL_TYPE" Type="Self.MCR_SCHOOL_TYPE" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL_TYPE">
+              <PropertyRef Name="SCHOOL_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL2">
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="1" />
+          <End Role="MCR_CONTENT_ALLOCATE" Type="Self.MCR_CONTENT_ALLOCATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_ALLOCATE">
+              <PropertyRef Name="SCHOOL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT">
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="1" />
+          <End Role="MCR_CONTENT_ALLOCATE" Type="Self.MCR_CONTENT_ALLOCATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SUBJECT">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_ALLOCATE">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT_GROUP">
+          <End Role="MCR_SUBJECT_GROUP" Type="Self.MCR_SUBJECT_GROUP" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SUBJECT_GROUP">
+              <PropertyRef Name="SUBJECT_GROUP_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="SUBJECT_GROUP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WEIGHT_LEVEL">
+          <End Role="MCR_WEIGHT_LEVEL" Type="Self.MCR_WEIGHT_LEVEL" Multiplicity="1" />
+          <End Role="MCR_ASSESSMENT_WEIGHT" Type="Self.MCR_ASSESSMENT_WEIGHT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_WEIGHT_LEVEL">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_ASSESSMENT_WEIGHT">
+              <PropertyRef Name="LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WEIGHT_LEVEL2">
+          <End Role="MCR_WEIGHT_LEVEL" Type="Self.MCR_WEIGHT_LEVEL" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_WEIGHT_LEVEL">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HoneyCombBusinessObjectsStoreContainer">
+          <EntitySet Name="MCR_ANSWERS" EntityType="Self.MCR_ANSWERS" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_ASSESSMENT" EntityType="Self.MCR_ASSESSMENT" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_ASSESSMENT_WEIGHT" EntityType="Self.MCR_ASSESSMENT_WEIGHT" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CITY" EntityType="Self.MCR_CITY" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT" EntityType="Self.MCR_CONTENT" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT_ALLOCATE" EntityType="Self.MCR_CONTENT_ALLOCATE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT_ENCRYPTION" EntityType="Self.MCR_CONTENT_ENCRYPTION" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT_INFO" EntityType="Self.MCR_CONTENT_INFO" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT_LOCATION" EntityType="Self.MCR_CONTENT_LOCATION" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_CONTENT_TYPE" EntityType="Self.MCR_CONTENT_TYPE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_COUNTRY" EntityType="Self.MCR_COUNTRY" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_DISTRICT" EntityType="Self.MCR_DISTRICT" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_EXAM_BOARD" EntityType="Self.MCR_EXAM_BOARD" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_GRADE" EntityType="Self.MCR_GRADE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_LANGUAGE_LEVEL" EntityType="Self.MCR_LANGUAGE_LEVEL" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_LOGIN" EntityType="Self.MCR_LOGIN" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_PERSONS" EntityType="Self.MCR_PERSONS" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_PROVINCE" EntityType="Self.MCR_PROVINCE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_QUESTION_TYPE" EntityType="Self.MCR_QUESTION_TYPE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_QUESTIONS" EntityType="Self.MCR_QUESTIONS" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_ROLES" EntityType="Self.MCR_ROLES" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_SCHOOL" EntityType="Self.MCR_SCHOOL" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_SCHOOL_LEVEL" EntityType="Self.MCR_SCHOOL_LEVEL" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_SCHOOL_TYPE" EntityType="Self.MCR_SCHOOL_TYPE" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_SUBJECT" EntityType="Self.MCR_SUBJECT" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_SUBJECT_GROUP" EntityType="Self.MCR_SUBJECT_GROUP" Schema="HONEYCOMB" store:Type="Tables" />
+          <EntitySet Name="MCR_WEIGHT_LEVEL" EntityType="Self.MCR_WEIGHT_LEVEL" Schema="HONEYCOMB" store:Type="Tables" />
+          <AssociationSet Name="FK_ASSESSMENT" Association="Self.FK_ASSESSMENT">
+            <End Role="MCR_ASSESSMENT" EntitySet="MCR_ASSESSMENT" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_INFO" Association="Self.FK_CONTENT_INFO">
+            <End Role="MCR_CONTENT_INFO" EntitySet="MCR_CONTENT_INFO" />
+            <End Role="MCR_CONTENT_LOCATION" EntitySet="MCR_CONTENT_LOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_INFO2" Association="Self.FK_CONTENT_INFO2">
+            <End Role="MCR_CONTENT_INFO" EntitySet="MCR_CONTENT_INFO" />
+            <End Role="MCR_ASSESSMENT" EntitySet="MCR_ASSESSMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_TYPE" Association="Self.FK_CONTENT_TYPE">
+            <End Role="MCR_CONTENT_TYPE" EntitySet="MCR_CONTENT_TYPE" />
+            <End Role="MCR_CONTENT" EntitySet="MCR_CONTENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNTRY" Association="Self.FK_COUNTRY">
+            <End Role="MCR_COUNTRY" EntitySet="MCR_COUNTRY" />
+            <End Role="MCR_PROVINCE" EntitySet="MCR_PROVINCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DISTRICT" Association="Self.FK_DISTRICT">
+            <End Role="MCR_DISTRICT" EntitySet="MCR_DISTRICT" />
+            <End Role="MCR_CITY" EntitySet="MCR_CITY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXAM_BOARD" Association="Self.FK_EXAM_BOARD">
+            <End Role="MCR_EXAM_BOARD" EntitySet="MCR_EXAM_BOARD" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRADE" Association="Self.FK_GRADE">
+            <End Role="MCR_GRADE" EntitySet="MCR_GRADE" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LANGUAGE_LEVEL" Association="Self.FK_LANGUAGE_LEVEL">
+            <End Role="MCR_LANGUAGE_LEVEL" EntitySet="MCR_LANGUAGE_LEVEL" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROVINCE" Association="Self.FK_PROVINCE">
+            <End Role="MCR_PROVINCE" EntitySet="MCR_PROVINCE" />
+            <End Role="MCR_DISTRICT" EntitySet="MCR_DISTRICT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QUESTION_TYPE" Association="Self.FK_QUESTION_TYPE">
+            <End Role="MCR_QUESTION_TYPE" EntitySet="MCR_QUESTION_TYPE" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QUESTIONS" Association="Self.FK_QUESTIONS">
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+            <End Role="MCR_ANSWERS" EntitySet="MCR_ANSWERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL_LEVEL" Association="Self.FK_SCHOOL_LEVEL">
+            <End Role="MCR_SCHOOL_LEVEL" EntitySet="MCR_SCHOOL_LEVEL" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL_TYPE" Association="Self.FK_SCHOOL_TYPE">
+            <End Role="MCR_SCHOOL_TYPE" EntitySet="MCR_SCHOOL_TYPE" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL2" Association="Self.FK_SCHOOL2">
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+            <End Role="MCR_CONTENT_ALLOCATE" EntitySet="MCR_CONTENT_ALLOCATE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT" Association="Self.FK_SUBJECT">
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+            <End Role="MCR_CONTENT_ALLOCATE" EntitySet="MCR_CONTENT_ALLOCATE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT_GROUP" Association="Self.FK_SUBJECT_GROUP">
+            <End Role="MCR_SUBJECT_GROUP" EntitySet="MCR_SUBJECT_GROUP" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WEIGHT_LEVEL" Association="Self.FK_WEIGHT_LEVEL">
+            <End Role="MCR_WEIGHT_LEVEL" EntitySet="MCR_WEIGHT_LEVEL" />
+            <End Role="MCR_ASSESSMENT_WEIGHT" EntitySet="MCR_ASSESSMENT_WEIGHT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WEIGHT_LEVEL2" Association="Self.FK_WEIGHT_LEVEL2">
+            <End Role="MCR_WEIGHT_LEVEL" EntitySet="MCR_WEIGHT_LEVEL" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HoneyComb.BusinessObjects" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MCR_ANSWERS">
+          <Key>
+            <PropertyRef Name="ANSWERS_ID" />
+          </Key>
+          <Property Name="ANSWERS_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTIONS_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER_DESCRIPTION" Type="String" MaxLength="335" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER1" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER2" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER3" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER4" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ANSWER5" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="INCORRECT_ANSWER" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CORRECT_ANSWER" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_QUESTIONS" Relationship="Self.FK_QUESTIONS" FromRole="MCR_ANSWERS" ToRole="MCR_QUESTIONS" />
+        </EntityType>
+        <EntityType Name="MCR_ASSESSMENT">
+          <Key>
+            <PropertyRef Name="ASSESSMENT_ID" />
+          </Key>
+          <Property Name="ASSESSMENT_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ASSESSMENT_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAGE_NUMBER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CHAPTER_NUMBER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CHAPTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_QUESTIONS" Relationship="Self.FK_ASSESSMENT" FromRole="MCR_ASSESSMENT" ToRole="MCR_QUESTIONS" />
+          <NavigationProperty Name="MCR_CONTENT_INFO" Relationship="Self.FK_CONTENT_INFO2" FromRole="MCR_ASSESSMENT" ToRole="MCR_CONTENT_INFO" />
+        </EntityType>
+        <EntityType Name="MCR_ASSESSMENT_WEIGHT">
+          <Key>
+            <PropertyRef Name="ASSESSMENT_WEIGHT_ID" />
+          </Key>
+          <Property Name="ASSESSMENT_WEIGHT_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WEIGHT" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_WEIGHT_LEVEL" Relationship="Self.FK_WEIGHT_LEVEL" FromRole="MCR_ASSESSMENT_WEIGHT" ToRole="MCR_WEIGHT_LEVEL" />
+        </EntityType>
+        <EntityType Name="MCR_CITY">
+          <Key>
+            <PropertyRef Name="CITY_ID" />
+          </Key>
+          <Property Name="CITY_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DISTRICT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CITY_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_DISTRICT" Relationship="Self.FK_DISTRICT" FromRole="MCR_CITY" ToRole="MCR_DISTRICT" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT">
+          <Key>
+            <PropertyRef Name="CONTENT_ID" />
+          </Key>
+          <Property Name="CONTENT_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_TYPE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_SIZE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACTIVATED" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CONTENT_TYPE" Relationship="Self.FK_CONTENT_TYPE" FromRole="MCR_CONTENT" ToRole="MCR_CONTENT_TYPE" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_ALLOCATE">
+          <Key>
+            <PropertyRef Name="ALLOCATE_ID" />
+          </Key>
+          <Property Name="ALLOCATE_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRADE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_SUBJECT_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALLOCATED" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SCHOOL" Relationship="Self.FK_SCHOOL2" FromRole="MCR_CONTENT_ALLOCATE" ToRole="MCR_SCHOOL" />
+          <NavigationProperty Name="MCR_SUBJECT" Relationship="Self.FK_SUBJECT" FromRole="MCR_CONTENT_ALLOCATE" ToRole="MCR_SUBJECT" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_ENCRYPTION">
+          <Key>
+            <PropertyRef Name="ENCRYPTION_ID" />
+          </Key>
+          <Property Name="ENCRYPTION_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENCRYPTED_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_INFO">
+          <Key>
+            <PropertyRef Name="CONTENT_INFO_ID" />
+          </Key>
+          <Property Name="CONTENT_INFO_ID" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEXT_ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEXT_TITLE" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEXT_AUTHOR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_CHAPTERS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_PAGES" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEXT_DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_ASSESSMENT" Relationship="Self.FK_CONTENT_INFO2" FromRole="MCR_CONTENT_INFO" ToRole="MCR_ASSESSMENT" />
+          <NavigationProperty Name="MCR_CONTENT_LOCATION" Relationship="Self.FK_CONTENT_INFO" FromRole="MCR_CONTENT_INFO" ToRole="MCR_CONTENT_LOCATION" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_LOCATION">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_INFO_ID" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_TITLE" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SMALL_THUMBNAIL_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SMALL_THUMBNAIL_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MEDIUM_THUMBNAIL_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MEDIUM_THUMBNAIL_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LARGE_THUMBNAIL_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LARGE_THUMBNAIL_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CONTENT_INFO" Relationship="Self.FK_CONTENT_INFO" FromRole="MCR_CONTENT_LOCATION" ToRole="MCR_CONTENT_INFO" />
+        </EntityType>
+        <EntityType Name="MCR_CONTENT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTENT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTENT_TYPE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTENT_TYPE_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CONTENT" Relationship="Self.FK_CONTENT_TYPE" FromRole="MCR_CONTENT_TYPE" ToRole="MCR_CONTENT" />
+        </EntityType>
+        <EntityType Name="MCR_COUNTRY">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COUNTRY_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_PROVINCE" Relationship="Self.FK_COUNTRY" FromRole="MCR_COUNTRY" ToRole="MCR_PROVINCE" />
+        </EntityType>
+        <EntityType Name="MCR_DISTRICT">
+          <Key>
+            <PropertyRef Name="DISTRICT_ID" />
+          </Key>
+          <Property Name="DISTRICT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCE_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DISTRICT_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CITY" Relationship="Self.FK_DISTRICT" FromRole="MCR_DISTRICT" ToRole="MCR_CITY" />
+          <NavigationProperty Name="MCR_PROVINCE" Relationship="Self.FK_PROVINCE" FromRole="MCR_DISTRICT" ToRole="MCR_PROVINCE" />
+        </EntityType>
+        <EntityType Name="MCR_EXAM_BOARD">
+          <Key>
+            <PropertyRef Name="EXAM_BOARD_ID" />
+          </Key>
+          <Property Name="EXAM_BOARD_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXAM_BOARD_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SCHOOL" Relationship="Self.FK_EXAM_BOARD" FromRole="MCR_EXAM_BOARD" ToRole="MCR_SCHOOL" />
+        </EntityType>
+        <EntityType Name="MCR_GRADE">
+          <Key>
+            <PropertyRef Name="GRADE_ID" />
+          </Key>
+          <Property Name="GRADE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXAM_BOARD_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRADE_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRADE_DESCRIPT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SUBJECT" Relationship="Self.FK_GRADE" FromRole="MCR_GRADE" ToRole="MCR_SUBJECT" />
+        </EntityType>
+        <EntityType Name="MCR_LANGUAGE_LEVEL">
+          <Key>
+            <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+          </Key>
+          <Property Name="LANGUAGE_LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LANGUAGE_LEVEL_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SUBJECT" Relationship="Self.FK_LANGUAGE_LEVEL" FromRole="MCR_LANGUAGE_LEVEL" ToRole="MCR_SUBJECT" />
+        </EntityType>
+        <EntityType Name="MCR_LOGIN">
+          <Key>
+            <PropertyRef Name="USER_CODE" />
+            <PropertyRef Name="LOGIN_USERNAME" />
+          </Key>
+          <Property Name="USER_CODE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="LOGIN_USERNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_TYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN_ATTEMPTS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="USER_STATUS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN_TIMESTAMP" Type="DateTime" Precision="6" />
+          <Property Name="LOGIN_IMAGE_URL" Type="String" MaxLength="160" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MCR_PERSONS">
+          <Key>
+            <PropertyRef Name="USER_CODE" />
+            <PropertyRef Name="LOGIN_USERNAME" />
+          </Key>
+          <Property Name="USER_CODE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="LOGIN_USERNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN_PASSWORD" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GENDER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Nullable="false" />
+          <Property Name="IDENTITY_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NATIONALITY" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ROLE_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_PROVINCE">
+          <Key>
+            <PropertyRef Name="PROVINCE_ID" />
+          </Key>
+          <Property Name="PROVINCE_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COUNTRY_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCE_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_COUNTRY" Relationship="Self.FK_COUNTRY" FromRole="MCR_PROVINCE" ToRole="MCR_COUNTRY" />
+          <NavigationProperty Name="MCR_DISTRICT" Relationship="Self.FK_PROVINCE" FromRole="MCR_PROVINCE" ToRole="MCR_DISTRICT" />
+        </EntityType>
+        <EntityType Name="MCR_QUESTION_TYPE">
+          <Key>
+            <PropertyRef Name="QUESTION_TYPE_ID" />
+          </Key>
+          <Property Name="QUESTION_TYPE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_TYPE_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ABRREVIATION" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_QUESTIONS" Relationship="Self.FK_QUESTION_TYPE" FromRole="MCR_QUESTION_TYPE" ToRole="MCR_QUESTIONS" />
+        </EntityType>
+        <EntityType Name="MCR_QUESTIONS">
+          <Key>
+            <PropertyRef Name="QUESTIONS_ID" />
+          </Key>
+          <Property Name="QUESTIONS_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ASSESSMENT_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_TYPE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_DESCRIPTION" Type="String" MaxLength="235" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAGE_NUMBER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CHAPTER_NUMBER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CHAPTER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_ANSWERS" Relationship="Self.FK_QUESTIONS" FromRole="MCR_QUESTIONS" ToRole="MCR_ANSWERS" />
+          <NavigationProperty Name="MCR_ASSESSMENT" Relationship="Self.FK_ASSESSMENT" FromRole="MCR_QUESTIONS" ToRole="MCR_ASSESSMENT" />
+          <NavigationProperty Name="MCR_QUESTION_TYPE" Relationship="Self.FK_QUESTION_TYPE" FromRole="MCR_QUESTIONS" ToRole="MCR_QUESTION_TYPE" />
+          <NavigationProperty Name="MCR_WEIGHT_LEVEL" Relationship="Self.FK_WEIGHT_LEVEL2" FromRole="MCR_QUESTIONS" ToRole="MCR_WEIGHT_LEVEL" />
+        </EntityType>
+        <EntityType Name="MCR_ROLES">
+          <Key>
+            <PropertyRef Name="ROLE_CODE" />
+          </Key>
+          <Property Name="ROLE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ROLE_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL">
+          <Key>
+            <PropertyRef Name="SCHOOL_ID" />
+          </Key>
+          <Property Name="SCHOOL_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COUNTRY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCE_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DISTRICT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CITY_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EXAM_BOARD_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_TYPE_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_LANGUAGE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTACT_NUMBER" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CONTENT_ALLOCATE" Relationship="Self.FK_SCHOOL2" FromRole="MCR_SCHOOL" ToRole="MCR_CONTENT_ALLOCATE" />
+          <NavigationProperty Name="MCR_EXAM_BOARD" Relationship="Self.FK_EXAM_BOARD" FromRole="MCR_SCHOOL" ToRole="MCR_EXAM_BOARD" />
+          <NavigationProperty Name="MCR_SCHOOL_LEVEL" Relationship="Self.FK_SCHOOL_LEVEL" FromRole="MCR_SCHOOL" ToRole="MCR_SCHOOL_LEVEL" />
+          <NavigationProperty Name="MCR_SCHOOL_TYPE" Relationship="Self.FK_SCHOOL_TYPE" FromRole="MCR_SCHOOL" ToRole="MCR_SCHOOL_TYPE" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL_LEVEL">
+          <Key>
+            <PropertyRef Name="SCHOOL_LEVEL_ID" />
+          </Key>
+          <Property Name="SCHOOL_LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SCHOOL" Relationship="Self.FK_SCHOOL_LEVEL" FromRole="MCR_SCHOOL_LEVEL" ToRole="MCR_SCHOOL" />
+        </EntityType>
+        <EntityType Name="MCR_SCHOOL_TYPE">
+          <Key>
+            <PropertyRef Name="SCHOOL_TYPE_ID" />
+          </Key>
+          <Property Name="SCHOOL_TYPE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_TYPE_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SCHOOL" Relationship="Self.FK_SCHOOL_TYPE" FromRole="MCR_SCHOOL_TYPE" ToRole="MCR_SCHOOL" />
+        </EntityType>
+        <EntityType Name="MCR_SUBJECT">
+          <Key>
+            <PropertyRef Name="SUBJECT_ID" />
+          </Key>
+          <Property Name="SUBJECT_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GRADE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LANGUAGE_LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_NAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_CONTENT_ALLOCATE" Relationship="Self.FK_SUBJECT" FromRole="MCR_SUBJECT" ToRole="MCR_CONTENT_ALLOCATE" />
+          <NavigationProperty Name="MCR_GRADE" Relationship="Self.FK_GRADE" FromRole="MCR_SUBJECT" ToRole="MCR_GRADE" />
+          <NavigationProperty Name="MCR_LANGUAGE_LEVEL" Relationship="Self.FK_LANGUAGE_LEVEL" FromRole="MCR_SUBJECT" ToRole="MCR_LANGUAGE_LEVEL" />
+          <NavigationProperty Name="MCR_SUBJECT_GROUP" Relationship="Self.FK_SUBJECT_GROUP" FromRole="MCR_SUBJECT" ToRole="MCR_SUBJECT_GROUP" />
+        </EntityType>
+        <EntityType Name="MCR_SUBJECT_GROUP">
+          <Key>
+            <PropertyRef Name="SUBJECT_GROUP_ID" />
+          </Key>
+          <Property Name="SUBJECT_GROUP_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCHOOL_LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT_GROUP_DESCRIPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_SUBJECT" Relationship="Self.FK_SUBJECT_GROUP" FromRole="MCR_SUBJECT_GROUP" ToRole="MCR_SUBJECT" />
+        </EntityType>
+        <EntityType Name="MCR_WEIGHT_LEVEL">
+          <Key>
+            <PropertyRef Name="LEVEL_ID" />
+          </Key>
+          <Property Name="LEVEL_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LEVEL_NAME" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LEVEL_DESCRIPTION" Type="String" MaxLength="220" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MCR_ASSESSMENT_WEIGHT" Relationship="Self.FK_WEIGHT_LEVEL" FromRole="MCR_WEIGHT_LEVEL" ToRole="MCR_ASSESSMENT_WEIGHT" />
+          <NavigationProperty Name="MCR_QUESTIONS" Relationship="Self.FK_WEIGHT_LEVEL2" FromRole="MCR_WEIGHT_LEVEL" ToRole="MCR_QUESTIONS" />
+        </EntityType>
+        <Association Name="FK_QUESTIONS">
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="1" />
+          <End Role="MCR_ANSWERS" Type="Self.MCR_ANSWERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_QUESTIONS">
+              <PropertyRef Name="QUESTIONS_ID" />
+            </Principal>
+            <Dependent Role="MCR_ANSWERS">
+              <PropertyRef Name="QUESTIONS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASSESSMENT">
+          <End Role="MCR_ASSESSMENT" Type="Self.MCR_ASSESSMENT" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_ASSESSMENT">
+              <PropertyRef Name="ASSESSMENT_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="ASSESSMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_INFO2">
+          <End Role="MCR_CONTENT_INFO" Type="Self.MCR_CONTENT_INFO" Multiplicity="1" />
+          <End Role="MCR_ASSESSMENT" Type="Self.MCR_ASSESSMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_INFO">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Principal>
+            <Dependent Role="MCR_ASSESSMENT">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WEIGHT_LEVEL">
+          <End Role="MCR_WEIGHT_LEVEL" Type="Self.MCR_WEIGHT_LEVEL" Multiplicity="1" />
+          <End Role="MCR_ASSESSMENT_WEIGHT" Type="Self.MCR_ASSESSMENT_WEIGHT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_WEIGHT_LEVEL">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_ASSESSMENT_WEIGHT">
+              <PropertyRef Name="LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DISTRICT">
+          <End Role="MCR_DISTRICT" Type="Self.MCR_DISTRICT" Multiplicity="1" />
+          <End Role="MCR_CITY" Type="Self.MCR_CITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_DISTRICT">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Principal>
+            <Dependent Role="MCR_CITY">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_TYPE">
+          <End Role="MCR_CONTENT_TYPE" Type="Self.MCR_CONTENT_TYPE" Multiplicity="1" />
+          <End Role="MCR_CONTENT" Type="Self.MCR_CONTENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_TYPE">
+              <PropertyRef Name="CONTENT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT">
+              <PropertyRef Name="CONTENT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL2">
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="1" />
+          <End Role="MCR_CONTENT_ALLOCATE" Type="Self.MCR_CONTENT_ALLOCATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_ALLOCATE">
+              <PropertyRef Name="SCHOOL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT">
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="1" />
+          <End Role="MCR_CONTENT_ALLOCATE" Type="Self.MCR_CONTENT_ALLOCATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SUBJECT">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_ALLOCATE">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CONTENT_INFO">
+          <End Role="MCR_CONTENT_INFO" Type="Self.MCR_CONTENT_INFO" Multiplicity="1" />
+          <End Role="MCR_CONTENT_LOCATION" Type="Self.MCR_CONTENT_LOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_CONTENT_INFO">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Principal>
+            <Dependent Role="MCR_CONTENT_LOCATION">
+              <PropertyRef Name="CONTENT_INFO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNTRY">
+          <End Role="MCR_COUNTRY" Type="Self.MCR_COUNTRY" Multiplicity="1" />
+          <End Role="MCR_PROVINCE" Type="Self.MCR_PROVINCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_COUNTRY">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Principal>
+            <Dependent Role="MCR_PROVINCE">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROVINCE">
+          <End Role="MCR_PROVINCE" Type="Self.MCR_PROVINCE" Multiplicity="1" />
+          <End Role="MCR_DISTRICT" Type="Self.MCR_DISTRICT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_PROVINCE">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Principal>
+            <Dependent Role="MCR_DISTRICT">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXAM_BOARD">
+          <End Role="MCR_EXAM_BOARD" Type="Self.MCR_EXAM_BOARD" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_EXAM_BOARD">
+              <PropertyRef Name="EXAM_BOARD_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="EXAM_BOARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRADE">
+          <End Role="MCR_GRADE" Type="Self.MCR_GRADE" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_GRADE">
+              <PropertyRef Name="GRADE_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="GRADE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LANGUAGE_LEVEL">
+          <End Role="MCR_LANGUAGE_LEVEL" Type="Self.MCR_LANGUAGE_LEVEL" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_LANGUAGE_LEVEL">
+              <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="LANGUAGE_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QUESTION_TYPE">
+          <End Role="MCR_QUESTION_TYPE" Type="Self.MCR_QUESTION_TYPE" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_QUESTION_TYPE">
+              <PropertyRef Name="QUESTION_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="QUESTION_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WEIGHT_LEVEL2">
+          <End Role="MCR_WEIGHT_LEVEL" Type="Self.MCR_WEIGHT_LEVEL" Multiplicity="1" />
+          <End Role="MCR_QUESTIONS" Type="Self.MCR_QUESTIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_WEIGHT_LEVEL">
+              <PropertyRef Name="LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_QUESTIONS">
+              <PropertyRef Name="LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL_LEVEL">
+          <End Role="MCR_SCHOOL_LEVEL" Type="Self.MCR_SCHOOL_LEVEL" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL_LEVEL">
+              <PropertyRef Name="SCHOOL_LEVEL_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_LEVEL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCHOOL_TYPE">
+          <End Role="MCR_SCHOOL_TYPE" Type="Self.MCR_SCHOOL_TYPE" Multiplicity="1" />
+          <End Role="MCR_SCHOOL" Type="Self.MCR_SCHOOL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SCHOOL_TYPE">
+              <PropertyRef Name="SCHOOL_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MCR_SCHOOL">
+              <PropertyRef Name="SCHOOL_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUBJECT_GROUP">
+          <End Role="MCR_SUBJECT_GROUP" Type="Self.MCR_SUBJECT_GROUP" Multiplicity="1" />
+          <End Role="MCR_SUBJECT" Type="Self.MCR_SUBJECT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MCR_SUBJECT_GROUP">
+              <PropertyRef Name="SUBJECT_GROUP_ID" />
+            </Principal>
+            <Dependent Role="MCR_SUBJECT">
+              <PropertyRef Name="SUBJECT_GROUP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HoneyCombEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MCR_ANSWERS" EntityType="Self.MCR_ANSWERS" />
+          <EntitySet Name="MCR_ASSESSMENT" EntityType="Self.MCR_ASSESSMENT" />
+          <EntitySet Name="MCR_ASSESSMENT_WEIGHT" EntityType="Self.MCR_ASSESSMENT_WEIGHT" />
+          <EntitySet Name="MCR_CITY" EntityType="Self.MCR_CITY" />
+          <EntitySet Name="MCR_CONTENT" EntityType="Self.MCR_CONTENT" />
+          <EntitySet Name="MCR_CONTENT_ALLOCATE" EntityType="Self.MCR_CONTENT_ALLOCATE" />
+          <EntitySet Name="MCR_CONTENT_ENCRYPTION" EntityType="Self.MCR_CONTENT_ENCRYPTION" />
+          <EntitySet Name="MCR_CONTENT_INFO" EntityType="Self.MCR_CONTENT_INFO" />
+          <EntitySet Name="MCR_CONTENT_LOCATION" EntityType="Self.MCR_CONTENT_LOCATION" />
+          <EntitySet Name="MCR_CONTENT_TYPE" EntityType="Self.MCR_CONTENT_TYPE" />
+          <EntitySet Name="MCR_COUNTRY" EntityType="Self.MCR_COUNTRY" />
+          <EntitySet Name="MCR_DISTRICT" EntityType="Self.MCR_DISTRICT" />
+          <EntitySet Name="MCR_EXAM_BOARD" EntityType="Self.MCR_EXAM_BOARD" />
+          <EntitySet Name="MCR_GRADE" EntityType="Self.MCR_GRADE" />
+          <EntitySet Name="MCR_LANGUAGE_LEVEL" EntityType="Self.MCR_LANGUAGE_LEVEL" />
+          <EntitySet Name="MCR_LOGIN" EntityType="Self.MCR_LOGIN" />
+          <EntitySet Name="MCR_PERSONS" EntityType="Self.MCR_PERSONS" />
+          <EntitySet Name="MCR_PROVINCE" EntityType="Self.MCR_PROVINCE" />
+          <EntitySet Name="MCR_QUESTION_TYPE" EntityType="Self.MCR_QUESTION_TYPE" />
+          <EntitySet Name="MCR_QUESTIONS" EntityType="Self.MCR_QUESTIONS" />
+          <EntitySet Name="MCR_ROLES" EntityType="Self.MCR_ROLES" />
+          <EntitySet Name="MCR_SCHOOL" EntityType="Self.MCR_SCHOOL" />
+          <EntitySet Name="MCR_SCHOOL_LEVEL" EntityType="Self.MCR_SCHOOL_LEVEL" />
+          <EntitySet Name="MCR_SCHOOL_TYPE" EntityType="Self.MCR_SCHOOL_TYPE" />
+          <EntitySet Name="MCR_SUBJECT" EntityType="Self.MCR_SUBJECT" />
+          <EntitySet Name="MCR_SUBJECT_GROUP" EntityType="Self.MCR_SUBJECT_GROUP" />
+          <EntitySet Name="MCR_WEIGHT_LEVEL" EntityType="Self.MCR_WEIGHT_LEVEL" />
+          <AssociationSet Name="FK_QUESTIONS" Association="Self.FK_QUESTIONS">
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+            <End Role="MCR_ANSWERS" EntitySet="MCR_ANSWERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASSESSMENT" Association="Self.FK_ASSESSMENT">
+            <End Role="MCR_ASSESSMENT" EntitySet="MCR_ASSESSMENT" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_INFO2" Association="Self.FK_CONTENT_INFO2">
+            <End Role="MCR_CONTENT_INFO" EntitySet="MCR_CONTENT_INFO" />
+            <End Role="MCR_ASSESSMENT" EntitySet="MCR_ASSESSMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WEIGHT_LEVEL" Association="Self.FK_WEIGHT_LEVEL">
+            <End Role="MCR_WEIGHT_LEVEL" EntitySet="MCR_WEIGHT_LEVEL" />
+            <End Role="MCR_ASSESSMENT_WEIGHT" EntitySet="MCR_ASSESSMENT_WEIGHT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DISTRICT" Association="Self.FK_DISTRICT">
+            <End Role="MCR_DISTRICT" EntitySet="MCR_DISTRICT" />
+            <End Role="MCR_CITY" EntitySet="MCR_CITY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_TYPE" Association="Self.FK_CONTENT_TYPE">
+            <End Role="MCR_CONTENT_TYPE" EntitySet="MCR_CONTENT_TYPE" />
+            <End Role="MCR_CONTENT" EntitySet="MCR_CONTENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL2" Association="Self.FK_SCHOOL2">
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+            <End Role="MCR_CONTENT_ALLOCATE" EntitySet="MCR_CONTENT_ALLOCATE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT" Association="Self.FK_SUBJECT">
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+            <End Role="MCR_CONTENT_ALLOCATE" EntitySet="MCR_CONTENT_ALLOCATE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CONTENT_INFO" Association="Self.FK_CONTENT_INFO">
+            <End Role="MCR_CONTENT_INFO" EntitySet="MCR_CONTENT_INFO" />
+            <End Role="MCR_CONTENT_LOCATION" EntitySet="MCR_CONTENT_LOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNTRY" Association="Self.FK_COUNTRY">
+            <End Role="MCR_COUNTRY" EntitySet="MCR_COUNTRY" />
+            <End Role="MCR_PROVINCE" EntitySet="MCR_PROVINCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROVINCE" Association="Self.FK_PROVINCE">
+            <End Role="MCR_PROVINCE" EntitySet="MCR_PROVINCE" />
+            <End Role="MCR_DISTRICT" EntitySet="MCR_DISTRICT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXAM_BOARD" Association="Self.FK_EXAM_BOARD">
+            <End Role="MCR_EXAM_BOARD" EntitySet="MCR_EXAM_BOARD" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRADE" Association="Self.FK_GRADE">
+            <End Role="MCR_GRADE" EntitySet="MCR_GRADE" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LANGUAGE_LEVEL" Association="Self.FK_LANGUAGE_LEVEL">
+            <End Role="MCR_LANGUAGE_LEVEL" EntitySet="MCR_LANGUAGE_LEVEL" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QUESTION_TYPE" Association="Self.FK_QUESTION_TYPE">
+            <End Role="MCR_QUESTION_TYPE" EntitySet="MCR_QUESTION_TYPE" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WEIGHT_LEVEL2" Association="Self.FK_WEIGHT_LEVEL2">
+            <End Role="MCR_WEIGHT_LEVEL" EntitySet="MCR_WEIGHT_LEVEL" />
+            <End Role="MCR_QUESTIONS" EntitySet="MCR_QUESTIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL_LEVEL" Association="Self.FK_SCHOOL_LEVEL">
+            <End Role="MCR_SCHOOL_LEVEL" EntitySet="MCR_SCHOOL_LEVEL" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCHOOL_TYPE" Association="Self.FK_SCHOOL_TYPE">
+            <End Role="MCR_SCHOOL_TYPE" EntitySet="MCR_SCHOOL_TYPE" />
+            <End Role="MCR_SCHOOL" EntitySet="MCR_SCHOOL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUBJECT_GROUP" Association="Self.FK_SUBJECT_GROUP">
+            <End Role="MCR_SUBJECT_GROUP" EntitySet="MCR_SUBJECT_GROUP" />
+            <End Role="MCR_SUBJECT" EntitySet="MCR_SUBJECT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HoneyCombBusinessObjectsStoreContainer" CdmEntityContainer="HoneyCombEntities">
+          <EntitySetMapping Name="MCR_ANSWERS">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_ANSWERS">
+              <MappingFragment StoreEntitySet="MCR_ANSWERS">
+                <ScalarProperty Name="ANSWERS_ID" ColumnName="ANSWERS_ID" />
+                <ScalarProperty Name="QUESTIONS_ID" ColumnName="QUESTIONS_ID" />
+                <ScalarProperty Name="ANSWER_DESCRIPTION" ColumnName="ANSWER_DESCRIPTION" />
+                <ScalarProperty Name="ANSWER1" ColumnName="ANSWER1" />
+                <ScalarProperty Name="ANSWER2" ColumnName="ANSWER2" />
+                <ScalarProperty Name="ANSWER3" ColumnName="ANSWER3" />
+                <ScalarProperty Name="ANSWER4" ColumnName="ANSWER4" />
+                <ScalarProperty Name="ANSWER5" ColumnName="ANSWER5" />
+                <ScalarProperty Name="INCORRECT_ANSWER" ColumnName="INCORRECT_ANSWER" />
+                <ScalarProperty Name="CORRECT_ANSWER" ColumnName="CORRECT_ANSWER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_ASSESSMENT">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_ASSESSMENT">
+              <MappingFragment StoreEntitySet="MCR_ASSESSMENT">
+                <ScalarProperty Name="ASSESSMENT_ID" ColumnName="ASSESSMENT_ID" />
+                <ScalarProperty Name="CONTENT_INFO_ID" ColumnName="CONTENT_INFO_ID" />
+                <ScalarProperty Name="ASSESSMENT_NAME" ColumnName="ASSESSMENT_NAME" />
+                <ScalarProperty Name="PAGE_NUMBER" ColumnName="PAGE_NUMBER" />
+                <ScalarProperty Name="CHAPTER_NUMBER" ColumnName="CHAPTER_NUMBER" />
+                <ScalarProperty Name="CHAPTER_NAME" ColumnName="CHAPTER_NAME" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_ASSESSMENT_WEIGHT">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_ASSESSMENT_WEIGHT">
+              <MappingFragment StoreEntitySet="MCR_ASSESSMENT_WEIGHT">
+                <ScalarProperty Name="ASSESSMENT_WEIGHT_ID" ColumnName="ASSESSMENT_WEIGHT_ID" />
+                <ScalarProperty Name="LEVEL_ID" ColumnName="LEVEL_ID" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CITY">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CITY">
+              <MappingFragment StoreEntitySet="MCR_CITY">
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT">
+              <MappingFragment StoreEntitySet="MCR_CONTENT">
+                <ScalarProperty Name="CONTENT_ID" ColumnName="CONTENT_ID" />
+                <ScalarProperty Name="CONTENT_TYPE_ID" ColumnName="CONTENT_TYPE_ID" />
+                <ScalarProperty Name="CONTENT_SIZE" ColumnName="CONTENT_SIZE" />
+                <ScalarProperty Name="ACTIVATED" ColumnName="ACTIVATED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT_ALLOCATE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT_ALLOCATE">
+              <MappingFragment StoreEntitySet="MCR_CONTENT_ALLOCATE">
+                <ScalarProperty Name="ALLOCATE_ID" ColumnName="ALLOCATE_ID" />
+                <ScalarProperty Name="CONTENT_ID" ColumnName="CONTENT_ID" />
+                <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+                <ScalarProperty Name="GRADE_ID" ColumnName="GRADE_ID" />
+                <ScalarProperty Name="SUBJECT_ID" ColumnName="SUBJECT_ID" />
+                <ScalarProperty Name="SCHOOL_SUBJECT_ID" ColumnName="SCHOOL_SUBJECT_ID" />
+                <ScalarProperty Name="ALLOCATED" ColumnName="ALLOCATED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT_ENCRYPTION">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT_ENCRYPTION">
+              <MappingFragment StoreEntitySet="MCR_CONTENT_ENCRYPTION">
+                <ScalarProperty Name="ENCRYPTION_ID" ColumnName="ENCRYPTION_ID" />
+                <ScalarProperty Name="CONTENT_INFO_ID" ColumnName="CONTENT_INFO_ID" />
+                <ScalarProperty Name="ENCRYPTED_NAME" ColumnName="ENCRYPTED_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT_INFO">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT_INFO">
+              <MappingFragment StoreEntitySet="MCR_CONTENT_INFO">
+                <ScalarProperty Name="CONTENT_INFO_ID" ColumnName="CONTENT_INFO_ID" />
+                <ScalarProperty Name="CONTENT_ID" ColumnName="CONTENT_ID" />
+                <ScalarProperty Name="SUBJECT_ID" ColumnName="SUBJECT_ID" />
+                <ScalarProperty Name="TEXT_ISBN" ColumnName="TEXT_ISBN" />
+                <ScalarProperty Name="TEXT_TITLE" ColumnName="TEXT_TITLE" />
+                <ScalarProperty Name="TEXT_AUTHOR" ColumnName="TEXT_AUTHOR" />
+                <ScalarProperty Name="NO_OF_CHAPTERS" ColumnName="NO_OF_CHAPTERS" />
+                <ScalarProperty Name="NO_OF_PAGES" ColumnName="NO_OF_PAGES" />
+                <ScalarProperty Name="TEXT_DESCRIPTION" ColumnName="TEXT_DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT_LOCATION">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT_LOCATION">
+              <MappingFragment StoreEntitySet="MCR_CONTENT_LOCATION">
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+                <ScalarProperty Name="CONTENT_INFO_ID" ColumnName="CONTENT_INFO_ID" />
+                <ScalarProperty Name="CONTENT_TITLE" ColumnName="CONTENT_TITLE" />
+                <ScalarProperty Name="CONTENT_URL" ColumnName="CONTENT_URL" />
+                <ScalarProperty Name="SMALL_THUMBNAIL_NAME" ColumnName="SMALL_THUMBNAIL_NAME" />
+                <ScalarProperty Name="SMALL_THUMBNAIL_URL" ColumnName="SMALL_THUMBNAIL_URL" />
+                <ScalarProperty Name="MEDIUM_THUMBNAIL_NAME" ColumnName="MEDIUM_THUMBNAIL_NAME" />
+                <ScalarProperty Name="MEDIUM_THUMBNAIL_URL" ColumnName="MEDIUM_THUMBNAIL_URL" />
+                <ScalarProperty Name="LARGE_THUMBNAIL_NAME" ColumnName="LARGE_THUMBNAIL_NAME" />
+                <ScalarProperty Name="LARGE_THUMBNAIL_URL" ColumnName="LARGE_THUMBNAIL_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_CONTENT_TYPE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_CONTENT_TYPE">
+              <MappingFragment StoreEntitySet="MCR_CONTENT_TYPE">
+                <ScalarProperty Name="CONTENT_TYPE_ID" ColumnName="CONTENT_TYPE_ID" />
+                <ScalarProperty Name="CONTENT_TYPE_NAME" ColumnName="CONTENT_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_COUNTRY">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_COUNTRY">
+              <MappingFragment StoreEntitySet="MCR_COUNTRY">
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_DISTRICT">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_DISTRICT">
+              <MappingFragment StoreEntitySet="MCR_DISTRICT">
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_EXAM_BOARD">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_EXAM_BOARD">
+              <MappingFragment StoreEntitySet="MCR_EXAM_BOARD">
+                <ScalarProperty Name="EXAM_BOARD_ID" ColumnName="EXAM_BOARD_ID" />
+                <ScalarProperty Name="EXAM_BOARD_NAME" ColumnName="EXAM_BOARD_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_GRADE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_GRADE">
+              <MappingFragment StoreEntitySet="MCR_GRADE">
+                <ScalarProperty Name="GRADE_ID" ColumnName="GRADE_ID" />
+                <ScalarProperty Name="EXAM_BOARD_ID" ColumnName="EXAM_BOARD_ID" />
+                <ScalarProperty Name="SCHOOL_LEVEL_ID" ColumnName="SCHOOL_LEVEL_ID" />
+                <ScalarProperty Name="GRADE_NAME" ColumnName="GRADE_NAME" />
+                <ScalarProperty Name="GRADE_DESCRIPT" ColumnName="GRADE_DESCRIPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_LANGUAGE_LEVEL">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_LANGUAGE_LEVEL">
+              <MappingFragment StoreEntitySet="MCR_LANGUAGE_LEVEL">
+                <ScalarProperty Name="LANGUAGE_LEVEL_ID" ColumnName="LANGUAGE_LEVEL_ID" />
+                <ScalarProperty Name="LANGUAGE_LEVEL_NAME" ColumnName="LANGUAGE_LEVEL_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_LOGIN">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_LOGIN">
+              <MappingFragment StoreEntitySet="MCR_LOGIN">
+                <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+                <ScalarProperty Name="LOGIN_USERNAME" ColumnName="LOGIN_USERNAME" />
+                <ScalarProperty Name="LOGIN_PASSWORD" ColumnName="LOGIN_PASSWORD" />
+                <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+                <ScalarProperty Name="LOGIN_ATTEMPTS" ColumnName="LOGIN_ATTEMPTS" />
+                <ScalarProperty Name="USER_STATUS" ColumnName="USER_STATUS" />
+                <ScalarProperty Name="LOGIN_TIMESTAMP" ColumnName="LOGIN_TIMESTAMP" />
+                <ScalarProperty Name="LOGIN_IMAGE_URL" ColumnName="LOGIN_IMAGE_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_PERSONS">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_PERSONS">
+              <MappingFragment StoreEntitySet="MCR_PERSONS">
+                <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
+                <ScalarProperty Name="LOGIN_USERNAME" ColumnName="LOGIN_USERNAME" />
+                <ScalarProperty Name="LOGIN_PASSWORD" ColumnName="LOGIN_PASSWORD" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="IDENTITY_NUMBER" ColumnName="IDENTITY_NUMBER" />
+                <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+                <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+                <ScalarProperty Name="USER_STATUS" ColumnName="USER_STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_PROVINCE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_PROVINCE">
+              <MappingFragment StoreEntitySet="MCR_PROVINCE">
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_QUESTION_TYPE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_QUESTION_TYPE">
+              <MappingFragment StoreEntitySet="MCR_QUESTION_TYPE">
+                <ScalarProperty Name="QUESTION_TYPE_ID" ColumnName="QUESTION_TYPE_ID" />
+                <ScalarProperty Name="QUESTION_TYPE_NAME" ColumnName="QUESTION_TYPE_NAME" />
+                <ScalarProperty Name="ABRREVIATION" ColumnName="ABRREVIATION" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_QUESTIONS">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_QUESTIONS">
+              <MappingFragment StoreEntitySet="MCR_QUESTIONS">
+                <ScalarProperty Name="QUESTIONS_ID" ColumnName="QUESTIONS_ID" />
+                <ScalarProperty Name="ASSESSMENT_ID" ColumnName="ASSESSMENT_ID" />
+                <ScalarProperty Name="QUESTION_TYPE_ID" ColumnName="QUESTION_TYPE_ID" />
+                <ScalarProperty Name="LEVEL_ID" ColumnName="LEVEL_ID" />
+                <ScalarProperty Name="QUESTION_DESCRIPTION" ColumnName="QUESTION_DESCRIPTION" />
+                <ScalarProperty Name="PAGE_NUMBER" ColumnName="PAGE_NUMBER" />
+                <ScalarProperty Name="CHAPTER_NUMBER" ColumnName="CHAPTER_NUMBER" />
+                <ScalarProperty Name="CHAPTER_NAME" ColumnName="CHAPTER_NAME" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_ROLES">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_ROLES">
+              <MappingFragment StoreEntitySet="MCR_ROLES">
+                <ScalarProperty Name="ROLE_CODE" ColumnName="ROLE_CODE" />
+                <ScalarProperty Name="ROLE_DESCRIPTION" ColumnName="ROLE_DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_SCHOOL">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_SCHOOL">
+              <MappingFragment StoreEntitySet="MCR_SCHOOL">
+                <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="EXAM_BOARD_ID" ColumnName="EXAM_BOARD_ID" />
+                <ScalarProperty Name="SCHOOL_TYPE_ID" ColumnName="SCHOOL_TYPE_ID" />
+                <ScalarProperty Name="SCHOOL_LEVEL_ID" ColumnName="SCHOOL_LEVEL_ID" />
+                <ScalarProperty Name="SCHOOL_NAME" ColumnName="SCHOOL_NAME" />
+                <ScalarProperty Name="SCHOOL_LANGUAGE" ColumnName="SCHOOL_LANGUAGE" />
+                <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+                <ScalarProperty Name="CONTACT_NUMBER" ColumnName="CONTACT_NUMBER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_SCHOOL_LEVEL">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_SCHOOL_LEVEL">
+              <MappingFragment StoreEntitySet="MCR_SCHOOL_LEVEL">
+                <ScalarProperty Name="SCHOOL_LEVEL_ID" ColumnName="SCHOOL_LEVEL_ID" />
+                <ScalarProperty Name="SCHOOL_LEVEL_NAME" ColumnName="SCHOOL_LEVEL_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_SCHOOL_TYPE">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_SCHOOL_TYPE">
+              <MappingFragment StoreEntitySet="MCR_SCHOOL_TYPE">
+                <ScalarProperty Name="SCHOOL_TYPE_ID" ColumnName="SCHOOL_TYPE_ID" />
+                <ScalarProperty Name="SCHOOL_TYPE_NAME" ColumnName="SCHOOL_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_SUBJECT">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_SUBJECT">
+              <MappingFragment StoreEntitySet="MCR_SUBJECT">
+                <ScalarProperty Name="SUBJECT_ID" ColumnName="SUBJECT_ID" />
+                <ScalarProperty Name="SUBJECT_GROUP_ID" ColumnName="SUBJECT_GROUP_ID" />
+                <ScalarProperty Name="GRADE_ID" ColumnName="GRADE_ID" />
+                <ScalarProperty Name="LANGUAGE_LEVEL_ID" ColumnName="LANGUAGE_LEVEL_ID" />
+                <ScalarProperty Name="SUBJECT_NAME" ColumnName="SUBJECT_NAME" />
+                <ScalarProperty Name="SUBJECT_DESCRIPTION" ColumnName="SUBJECT_DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_SUBJECT_GROUP">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_SUBJECT_GROUP">
+              <MappingFragment StoreEntitySet="MCR_SUBJECT_GROUP">
+                <ScalarProperty Name="SUBJECT_GROUP_ID" ColumnName="SUBJECT_GROUP_ID" />
+                <ScalarProperty Name="SCHOOL_LEVEL_ID" ColumnName="SCHOOL_LEVEL_ID" />
+                <ScalarProperty Name="SUBJECT_GROUP_NAME" ColumnName="SUBJECT_GROUP_NAME" />
+                <ScalarProperty Name="SUBJECT_GROUP_DESCRIPT" ColumnName="SUBJECT_GROUP_DESCRIPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MCR_WEIGHT_LEVEL">
+            <EntityTypeMapping TypeName="HoneyComb.BusinessObjects.MCR_WEIGHT_LEVEL">
+              <MappingFragment StoreEntitySet="MCR_WEIGHT_LEVEL">
+                <ScalarProperty Name="LEVEL_ID" ColumnName="LEVEL_ID" />
+                <ScalarProperty Name="LEVEL_NAME" ColumnName="LEVEL_NAME" />
+                <ScalarProperty Name="LEVEL_DESCRIPTION" ColumnName="LEVEL_DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

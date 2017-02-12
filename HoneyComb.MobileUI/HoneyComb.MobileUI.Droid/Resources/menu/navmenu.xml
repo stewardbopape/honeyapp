@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  
+  <group android:checkableBehavior="single" android:id="@+id/my_id3">
+    <item
+      android:id="@+id/outlets"
+       android:icon="@drawable/ic_store"
+      android:title="Menu 1" />
+  </group>
+  <group android:checkableBehavior="single" android:id="@+id/my_id4">
+    <item
+      android:id="@+id/verify_collection"
+       android:icon="@drawable/ic_input_black"
+      android:title="Menu 2" />
+  </group>
+ 
+  <group android:checkableBehavior="single" android:id="@+id/my_id5">
+    <item
+      android:id="@+id/log_out"
+       android:icon="@drawable/logout"
+      android:title="Log Out" />
+  </group>
+  <group android:checkableBehavior="single" android:id="@+id/my_id8"></group>
+  <!--<item android:title="Review">
+    <menu>
+      <item
+        android:title="Post"
+         android:id="@+id/verify_collection"/>
+      <item
+        android:title="Ratings" />
+    </menu>
+  </item>-->
+</menu>

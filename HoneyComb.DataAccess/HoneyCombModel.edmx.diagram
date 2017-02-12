@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1de1df9b7b31420dba07a9c2f85964f6" Name="Diagram1">
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_ANSWERS" Width="1.5" PointX="12.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_ASSESSMENT" Width="1.5" PointX="8" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_ASSESSMENT_WEIGHT" Width="1.5" PointX="10.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CITY" Width="1.5" PointX="17.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT" Width="1.5" PointX="13" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT_ALLOCATE" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT_ENCRYPTION" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT_INFO" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT_LOCATION" Width="1.5" PointX="8" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_CONTENT_TYPE" Width="1.5" PointX="10.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_COUNTRY" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_DISTRICT" Width="1.5" PointX="15.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_EXAM_BOARD" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_GRADE" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_LANGUAGE_LEVEL" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_LOGIN" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_PERSONS" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_PROVINCE" Width="1.5" PointX="13" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_QUESTION_TYPE" Width="1.5" PointX="8" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_QUESTIONS" Width="1.5" PointX="10.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_ROLES" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_SCHOOL" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_SCHOOL_LEVEL" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_SCHOOL_TYPE" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_SUBJECT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_SUBJECT_GROUP" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HoneyComb.BusinessObjects.MCR_WEIGHT_LEVEL" Width="1.5" PointX="8" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_QUESTIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_ASSESSMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_CONTENT_INFO2" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_WEIGHT_LEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_DISTRICT" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_CONTENT_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_SCHOOL2" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_SUBJECT" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_CONTENT_INFO" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_COUNTRY" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_PROVINCE" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_EXAM_BOARD" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_GRADE" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_LANGUAGE_LEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_QUESTION_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_WEIGHT_LEVEL2" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_SCHOOL_LEVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_SCHOOL_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="HoneyComb.BusinessObjects.FK_SUBJECT_GROUP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
