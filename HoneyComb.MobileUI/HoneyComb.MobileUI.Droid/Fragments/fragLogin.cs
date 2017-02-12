@@ -22,6 +22,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
         {
             base.OnCreate(savedInstanceState);
 
+
             // Create your fragment here
         }
 
