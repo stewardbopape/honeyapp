@@ -9,7 +9,7 @@ namespace HoneyComb.IProvider.Users
 {
     public interface IUserProvider
     {
-        MCR_PERSONS AddUser(MCR_PERSONS User);
-        MCR_PERSONS Login(MCR_PERSONS User);
+        ResultObj<MCR_PERSONS> AddUser(MCR_PERSONS User);
+        ResultObj<MCR_PERSONS> Login(MCR_PERSONS User);
     }
 }

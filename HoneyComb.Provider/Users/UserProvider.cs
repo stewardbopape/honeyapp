@@ -17,12 +17,12 @@ namespace HoneyComb.Provider.Users
         {
             this._unitOfWork = unitOfWork;
         }
-        public MCR_PERSONS AddUser(MCR_PERSONS User)
+        public ResultObj<MCR_PERSONS> AddUser(MCR_PERSONS User)
         {
            return _unitOfWork.UserManager.AddUser(User);
         }
 
-        public MCR_PERSONS Login(MCR_PERSONS User)
+        public ResultObj<MCR_PERSONS> Login(MCR_PERSONS User)
         {
             return _unitOfWork.UserManager.Login(User);
         }

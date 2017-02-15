@@ -9,8 +9,8 @@ namespace HoneyComb.IDataAccess.Users
 {
     public interface IUserManager
     {
-        MCR_PERSONS AddUser(MCR_PERSONS User);
+        ResultObj<MCR_PERSONS> AddUser(MCR_PERSONS User);
 
-        MCR_PERSONS Login(MCR_PERSONS User);
+        ResultObj<MCR_PERSONS> Login(MCR_PERSONS User);
     }
 }

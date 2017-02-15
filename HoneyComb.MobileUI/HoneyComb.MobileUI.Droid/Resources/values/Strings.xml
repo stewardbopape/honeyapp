@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="hello">Hello World, Click Me!</string>
+  <string name="hello">Welcome to Honeycom Education</string>
   <string name="app_name">Honeycomb Solution</string>
   <string name="ApplicationName">HoneyComb</string>
+
+  <string name="lblusername">Username</string>
+  <string name="lblpassword">Password</string>
+  <string name="btnlogin">Sign In</string>
 
   <string name="closedDrawer">Drawer Closed</string>
   <string name="openedDrawer">Drawer Opened</string>

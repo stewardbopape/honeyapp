@@ -12,7 +12,6 @@ using Android.Support.Design.Widget;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using SupportFragment = Android.Support.V4.App.Fragment;
 using Android.Support.V7.App;
-using Android.Views;
 using HoneyComb.MobileUI.Droid.Custom;
 using System.Collections.Generic;
 using HoneyComb.MobileUI.Droid.Fragments;
@@ -57,6 +56,10 @@ namespace HoneyComb.MobileUI.Droid
             mNavigationView.NavigationItemSelected += mNavigationView_NavigationItemSelected;
 
             SetSupportActionBar(mToolbar);
+
+            //var trans = SupportFragmentManager.BeginTransaction();
+            //trans.Replace(Resource.Id.fragmentContainer, new fragLogin(), "login");
+            //trans.Commit();
 
             var trans = SupportFragmentManager.BeginTransaction();
             trans.Replace(Resource.Id.fragmentContainer, new fragLogin(), "login");

@@ -18,16 +18,25 @@ namespace HoneyComb.DataAccess.Users
             _context = context;
         }
 
-        public MCR_PERSONS AddUser(MCR_PERSONS User)
+        public ResultObj<MCR_PERSONS> AddUser(MCR_PERSONS User)
         {
-            return base.Insert(User);
+            ResultObj<MCR_PERSONS> result = new ResultObj<MCR_PERSONS>();
+            result.Data = base.Insert(User);
+            return result;
         }
-        public MCR_PERSONS Login(MCR_PERSONS User)
+        public ResultObj<MCR_PERSONS> Login(MCR_PERSONS User)
         {
-
-
+            ResultObj<MCR_PERSONS> result = new ResultObj<MCR_PERSONS>();
+            result.isSuccessful = true;
             var user = _context.MCR_PERSONS.Where(o => o.LOGIN_USERNAME == User.LOGIN_USERNAME && o.LOGIN_PASSWORD == User.LOGIN_PASSWORD).SingleOrDefault();
-            return user;
+            if (user == null)
+            {
+                result.isSuccessful = false;
+                result.Error = "Invalid username or password";
+            }
+              
+            result.Data = user;
+            return result;
 
         }
 
