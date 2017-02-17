@@ -16,6 +16,9 @@ namespace HoneyComb.MobileUI.Droid.Fragments
 {
     public class fragHome : Android.Support.V4.App.Fragment, IServiceDeletegate<object>
     {
+        MainActivity _mainActivity;
+        CalendarView _simpleCalendarView;
+
         public void HandleServiceResults(object resultRootObject, bool isSuccessfull, string message)
         {
             throw new NotImplementedException();
@@ -33,8 +36,17 @@ namespace HoneyComb.MobileUI.Droid.Fragments
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            View view = inflater.Inflate(Resource.Layout.uiHome, container, false);
+            View view = inflater.Inflate(Resource.Layout.uiMaster, container, false);
 
+            _simpleCalendarView = view.FindViewById<CalendarView>(Resource.Id.simpleCalendarView); // get the reference of CalendarView
+            _simpleCalendarView.FocusedMonthDateColor = Android.Graphics.Color.Red;
+            _simpleCalendarView.UnfocusedMonthDateColor = Android.Graphics.Color.Blue; // set the yellow color for the dates of an unfocused month
+            _simpleCalendarView.SelectedWeekBackgroundColor = Android.Graphics.Color.Red;
+            _simpleCalendarView.WeekSeparatorLineColor= Android.Graphics.Color.Green; // green color for the week separator line
+
+            _mainActivity = (MainActivity)this.Activity;
+
+            _mainActivity.SetToolBarTitle("Grade 4.1 Asanda Mavuso");
             return view;
         }
     }

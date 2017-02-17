@@ -20,7 +20,22 @@ namespace HoneyComb.MobileUI
         static Config()
         {
             GetActions = new List<GetAction>();
-            GetActions.Add(new GetAction() { Code = ActionCode.Login, Url = @"user/login/" });
+            GetActions.Add(new GetAction() { Code = ActionCodeType.Login, Url = @"user/login/" });
+        }
+    }
+
+    public static class CurrentLocation
+    {
+        private static double _lat, _long;
+        public static double Latitude
+        {
+            get { return _lat; }
+            set { _lat = value; }
+        }
+        public static double Longitude
+        {
+            get { return _long; }
+            set { _long = value; }
         }
     }
 }

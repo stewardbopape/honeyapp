@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace HoneyComb.BusinessObjects
 {
-    public enum ActionCode:int
+    public enum ActionCodeType:int
     {
         Login,
         ClassView
 
     };
+
+   
 }

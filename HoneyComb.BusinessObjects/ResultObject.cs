@@ -17,11 +17,13 @@ namespace HoneyComb.BusinessObjects
         public T Data { get; set; }
         public string Error { get; set; }
         public bool isSuccessful { get; set; }
+
+        public ActionCodeType Code { get; set; } 
     }
 
     public class GetAction
     {
-        public ActionCode Code { get; set; }
+        public ActionCodeType Code { get; set; }
         public string Url { get; set; }
     }
 }

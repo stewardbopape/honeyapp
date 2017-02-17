@@ -19,7 +19,7 @@ namespace HoneyComb.BusinessObjects
     }
     public class PostAction
     {
-        public ActionCode Code { get; set; }
+        public ActionCodeType Code { get; set; }
         public string Url { get; set; }
     }
 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"  android:background="@drawable/customborder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+  <!--scrollable subject container-->
+  <HorizontalScrollView android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+    <LinearLayout android:id="@+id/subjectContainerLinear" android:layout_width="match_parent"  android:layout_margin="4dp" android:background="@drawable/customborder"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+      <Button
+              android:text="Class: Mathematics"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/button1" />
+      <Button
+          android:text="Class: English 1st Language"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button2" />
+      <Button
+          android:text="Class: Life Skills"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button3" />
+      <Button
+          android:text="Class: Technology"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button4" />
+      <Button
+          android:text="Class: Afrikaans"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button5" />
+      <Button
+          android:text="Class: Physics"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button6" />
+      <Button
+          android:text="Class: Additional Subject1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button7" />
+      <Button
+          android:text="Class: Additional Subject2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button8" />
+      <Button
+        android:text="Class: Additional Subject1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9" />
+      <Button
+          android:text="Class: Additional Subject2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button10" />
+      <Button
+        android:text="Class: Additional Subject1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button11" />
+      <Button
+          android:text="Class: Additional Subject2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/button12" />
+
+    </LinearLayout>
+  </HorizontalScrollView>
+
+  <!--parent container-->
+  <LinearLayout  android:orientation="horizontal" android:layout_width="fill_parent" android:layout_weight="1" android:layout_margin="6dp"  android:background="@drawable/customborder"
+    android:layout_height="fill_parent">
+ 
+    <!--timetable container-->
+    <LinearLayout  android:orientation="vertical" android:layout_margin="4dp"  android:id="@+id/timetableParentContainer"  android:layout_weight="1"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"  android:minHeight="300dp"  android:minWidth="500dp" android:background="@drawable/customborder">
+
+      <LinearLayout  android:orientation="vertical"  android:id="@+id/timetableContainer" android:layout_margin="4dp"    android:minHeight="250dp" android:minWidth="300dp"  android:background="@drawable/customborder"
+ android:layout_weight="1"
+        android:layout_width="fill_parent"
+android:layout_height="match_parent" >
+        <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Time Table"
+                       android:textAppearance="?android:attr/textAppearanceSmall"
+                      />
+
+      </LinearLayout>
+      <LinearLayout  android:orientation="horizontal"  android:id="@+id/anotherContainer" android:layout_margin="4dp"    android:layout_height="fill_parent"  android:layout_width="fill_parent"  android:layout_weight="1" android:background="@drawable/customborder">
+           <LinearLayout  android:orientation="vertical"  android:id="@+id/tabContainer" android:layout_margin="4dp"    android:layout_height="match_parent"  android:minWidth="300dp"  android:layout_width="wrap_content"   android:background="@drawable/customborder">
+
+          <Button
+     android:text="Class: Life Skills"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/button31" />
+
+
+          <Button
+     android:text="Class: Life Skills"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/button32" />
+
+          <Button
+     android:text="Class: Life Skills"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:id="@+id/button33" />
+
+
+        </LinearLayout>
+           <LinearLayout  android:orientation="horizontal"  android:id="@+id/noteContainer" android:layout_margin="4dp"    android:layout_height="match_parent" android:layout_width="fill_parent"   android:layout_weight="1" android:background="@drawable/customborder">
+          <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_centerInParent="true"
+                         android:text="Note Container Note Container Note Container Note Container"
+                         android:textAppearance="?android:attr/textAppearanceSmall"
+                         android:gravity="center" />
+
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+
+
+    <!--side container-->
+    <LinearLayout  android:orientation="vertical"  android:id="@+id/sideContainer" android:layout_margin="4dp"   android:layout_gravity="right" android:gravity="right"  android:minWidth="250dp"  android:minHeight="450dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1"
+android:background="@drawable/customborder">
+      <LinearLayout  android:orientation="vertical"  android:id="@+id/calender" android:layout_margin="4dp"   android:layout_gravity="top" android:gravity="top" android:layout_height="wrap_content" android:layout_width="match_parent">
+
+        <CalendarView
+        android:id="@+id/simpleCalendarView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:firstDayOfWeek="2"
+        android:maxDate="01/01/2018"
+        android:minDate="01/02/2017" />
+      </LinearLayout>
+    </LinearLayout>
+
+  </LinearLayout>
+
+
+</LinearLayout>

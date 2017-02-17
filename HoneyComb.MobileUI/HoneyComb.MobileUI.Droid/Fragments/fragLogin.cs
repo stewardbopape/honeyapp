@@ -61,6 +61,10 @@ namespace HoneyComb.MobileUI.Droid.Fragments
 
         private void _btnLoginView_Click(object sender, EventArgs e)
         {
+            //var trans = FragmentManager.BeginTransaction();
+            //trans.Replace(Resource.Id.fragmentContainer, new fragHome(), "home");
+            //trans.Commit();
+
             Drawable errorIcon = Resources.GetDrawable(Resource.Drawable.Attention);
 
             if (_txtUserNameView.Text == string.Empty)
@@ -76,7 +80,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
                 return;
             }
 
-            GetAction action = Config.GetActions.Where(o => o.Code == ActionCode.Login).SingleOrDefault();
+            GetAction action = Config.GetActions.Where(o => o.Code == ActionCodeType.Login).SingleOrDefault();
 
             if (action == null)
                 throw new Exception(Config.ErrMissingAction);
