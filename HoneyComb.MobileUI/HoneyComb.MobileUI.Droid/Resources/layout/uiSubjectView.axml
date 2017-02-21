@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/customborder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/subjectContainerLinear"
+            android:layout_width="match_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/customborder"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+                android:text="Class: Mathematics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1" />
+            <Button
+                android:text="Class: English 1st Language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2" />
+            <Button
+                android:text="Class: Life Skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3" />
+            <Button
+                android:text="Class: Technology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button4" />
+            <Button
+                android:text="Class: Afrikaans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button5" />
+            <Button
+                android:text="Class: Physics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button6" />
+            <Button
+                android:text="Class: Additional Subject1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button7" />
+            <Button
+                android:text="Class: Additional Subject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button8" />
+            <Button
+                android:text="Class: Additional Subject1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button9" />
+            <Button
+                android:text="Class: Additional Subject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button10" />
+            <Button
+                android:text="Class: Additional Subject1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button11" />
+            <Button
+                android:text="Class: Additional Subject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button12" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <LinearLayout
+        android:orientation="horzontal"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_margin="6dp"
+        android:background="@drawable/customborder"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/customborder"
+            android:layout_height="fill_parent">
+            <LinearLayout
+                android:id="@+id/mainContentContainer"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="6dp"
+                android:background="@drawable/customborder"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/leftMenuContainer"
+                    android:layout_margin="2dp"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:minWidth="250dp"
+                    android:minHeight="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/customborder">
+                    <Button
+                        android:text="Worksheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:text="COpen Book 1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:text="Open Book 2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:text="Open Video"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/centreContainer"
+                    android:layout_margin="2dp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:minWidth="250dp"
+                    android:minHeight="150dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/customborder" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horitontal"
+                android:layout_width="fill_parent"
+                android:gravity="bottom"
+                android:layout_margin="6dp"
+                android:background="@drawable/customborder"
+                android:layout_height="wrap_content">
+                <TableLayout
+                    android:background="@drawable/customborder"
+                    android:minHeight="100dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TableRow>
+                        <LinearLayout
+                            android:id="@+id/sharedNoteContainer"
+                            android:layout_width="0dp"
+                            android:minHeight="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/customborder"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:minHeight="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/customborder"
+                            android:layout_height="wrap_content" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+    <!--THE SIDE CONTAINER-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/sideContainer"
+            android:layout_margin="2dp"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:minWidth="300dp"
+            android:minHeight="440dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/customborder">
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/recommendedVideosContainer"
+                android:minHeight="150"
+                android:layout_margin="2dp"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:background="@drawable/customborder"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/recommendedBooksContainer"
+                android:minHeight="150"
+                android:layout_margin="2dp"
+                android:background="@drawable/customborder"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:gravity="top"
+                android:layout_height="fill_parent" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/suggestedBooksContainer"
+                android:minHeight="150"
+                android:background="@drawable/customborder"
+                android:layout_margin="2dp"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

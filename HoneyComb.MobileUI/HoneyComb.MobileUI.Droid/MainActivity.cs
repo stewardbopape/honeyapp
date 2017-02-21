@@ -18,7 +18,7 @@ using HoneyComb.MobileUI.Droid.Fragments;
 
 namespace HoneyComb.MobileUI.Droid
 {
-	[Activity (Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon",Theme = "@style/MyTheme", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation)]
+	[Activity (Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon",Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape, ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation)]
 
     public class MainActivity : AppCompatActivity
     {

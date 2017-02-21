@@ -123,7 +123,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
                         _mainActivity.RunOnUiThread(() =>
                         {
                             var trans = FragmentManager.BeginTransaction();
-                            trans.Replace(Resource.Id.fragmentContainer, new fragHome(), "home");
+                            trans.Replace(Resource.Id.fragmentContainer, new fragClassView(), "classview");
                             trans.Commit();
 
                             _mainActivity.ShowSideMenu(false);

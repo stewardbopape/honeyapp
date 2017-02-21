@@ -85,9 +85,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\CustomActionBarDrawerToggle.cs" />
+    <Compile Include="Fragments\fragClassView.cs" />
     <Compile Include="Fragments\fragLogin.cs" />
     <Compile Include="Fragments\fragMainPage.cs" />
     <Compile Include="Fragments\fragHome.cs" />
+    <Compile Include="Fragments\fragSubjectView.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +109,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\uiMaster.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\uiClassView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\uiSubjectView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
