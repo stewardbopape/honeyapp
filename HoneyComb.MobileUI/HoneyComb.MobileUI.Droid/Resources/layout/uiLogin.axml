@@ -50,7 +50,8 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
+                    android:text="stewardb"
                     android:id="@+id/txtUsername"
                     android:hint="@string/lblusername" />
             </android.support.design.widget.TextInputLayout>
@@ -66,6 +67,7 @@
                     android:inputType="textPassword"
                     android:textColor="@color/StatsBlack"
                     android:layout_gravity="center"
+                    android:text="password"
                     android:hint="@string/lblpassword" />
             </android.support.design.widget.TextInputLayout>
             <TextView

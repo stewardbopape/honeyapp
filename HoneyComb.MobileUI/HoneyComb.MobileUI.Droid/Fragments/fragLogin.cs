@@ -15,9 +15,13 @@ using Android.Graphics.Drawables;
 using HoneyComb.BusinessObjects;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Android.Content.Res;
+using Android.Media;
+using static Android.Graphics.Drawables.GradientDrawable;
 
 namespace HoneyComb.MobileUI.Droid.Fragments
 {
+    [Activity(ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class fragLogin : Android.Support.V4.App.Fragment, IServiceDeletegate<object>
     {
         MainActivity _mainActivity;
@@ -80,16 +84,28 @@ namespace HoneyComb.MobileUI.Droid.Fragments
                 return;
             }
 
-            GetAction action = Config.GetActions.Where(o => o.Code == ActionCodeType.Login).SingleOrDefault();
+            if(_txtUserNameView.Text!="stewardb" || _txtPasswordView.Text!="password")
+            {
+                _txtErroView.Text = "Invalid username or password";
+                _txtErroView.Visibility = ViewStates.Visible;
+                return;
+            }
+            _mainActivity.ShowSideMenu(false);
+            _progressBarView.Visibility = ViewStates.Gone;
+            var trans = FragmentManager.BeginTransaction();
+            trans.Replace(Resource.Id.fragmentContainer, new fragClassView(), "classview");
+            trans.Commit();
+            //return;
+            //GetAction action = Config.GetActions.Where(o => o.Code == ActionCodeType.Login).SingleOrDefault();
 
-            if (action == null)
-                throw new Exception(Config.ErrMissingAction);
+            //if (action == null)
+            //    throw new Exception(Config.ErrMissingAction);
 
-            object[] param = new[] { _txtUserNameView.Text, _txtPasswordView.Text };
+            //object[] param = new[] { _txtUserNameView.Text, _txtPasswordView.Text };
 
-            _service = new Services.HoneyCombService();
-            _progressBarView.Visibility = ViewStates.Visible;
-            _service.GetObject(this, action, param);
+            //_service = new Services.HoneyCombService();
+            //_progressBarView.Visibility = ViewStates.Visible;
+            //_service.GetObject(this, action, param);
 
 
         }

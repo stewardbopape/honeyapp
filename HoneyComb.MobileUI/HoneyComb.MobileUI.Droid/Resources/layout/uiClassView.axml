@@ -105,50 +105,50 @@
                 android:background="@drawable/customborder"
                 android:layout_weight="1"
                 android:layout_width="fill_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Time Table"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:layout_height="fill_parent">
+               <com.joanzapata.pdfview.PDFView
+                   android:id="@+id/pdfView1"
+                   android:layout_weight="1"
+                   android:layout_width="fill_parent"
+                   android:layout_height="fill_parent" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
                 android:id="@+id/anotherContainer"
                 android:layout_margin="2dp"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:layout_width="fill_parent"
                 android:layout_weight="1"
                 android:background="@drawable/customborder">
                 <LinearLayout
                     android:orientation="vertical"
                     android:id="@+id/tabContainer"
-                    android:layout_margin="2dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="300dp"
+                    android:layout_height="wrap_content"
+                    android:minWidth="150dp"
+                    android:minHeight="150dp"
                     android:layout_width="wrap_content"
                     android:background="@drawable/customborder">
                     <Button
                         android:text="Class: Life Skills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/button31" />
+                        android:id="@+id/btnBook" />
                     <Button
                         android:text="Class: Life Skills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/button32" />
+                        android:id="@+id/btnBook2" />
                     <Button
                         android:text="Class: Life Skills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/button33" />
+                        android:id="@+id/btnBook3" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:id="@+id/noteContainer"
                     android:layout_margin="2dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
                     android:background="@drawable/customborder">

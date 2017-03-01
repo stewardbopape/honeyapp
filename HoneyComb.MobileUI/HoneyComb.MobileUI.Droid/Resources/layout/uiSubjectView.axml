@@ -77,7 +77,7 @@
         </LinearLayout>
     </HorizontalScrollView>
     <LinearLayout
-        android:orientation="horzontal"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_weight="1"
         android:layout_margin="6dp"
@@ -139,7 +139,7 @@
                     android:background="@drawable/customborder" />
             </LinearLayout>
             <LinearLayout
-                android:orientation="horitontal"
+                android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:gravity="bottom"
                 android:layout_margin="6dp"
@@ -184,7 +184,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:id="@+id/recommendedVideosContainer"
-                android:minHeight="150"
+                android:minHeight="150dp"
                 android:layout_margin="2dp"
                 android:layout_gravity="top"
                 android:gravity="top"
@@ -194,7 +194,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:id="@+id/recommendedBooksContainer"
-                android:minHeight="150"
+                android:minHeight="150dp"
                 android:layout_margin="2dp"
                 android:background="@drawable/customborder"
                 android:layout_weight="1"
@@ -204,7 +204,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:id="@+id/suggestedBooksContainer"
-                android:minHeight="150"
+                android:minHeight="150dp"
                 android:background="@drawable/customborder"
                 android:layout_margin="2dp"
                 android:layout_gravity="bottom"

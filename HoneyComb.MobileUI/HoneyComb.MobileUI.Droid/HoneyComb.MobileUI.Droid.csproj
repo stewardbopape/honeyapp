@@ -40,6 +40,9 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DroidPdfView">
+      <HintPath>..\..\..\Xamarin.DroidPdfView.Binding.Library-master\DroidPdfView\bin\Debug\DroidPdfView.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -89,6 +92,7 @@
     <Compile Include="Fragments\fragLogin.cs" />
     <Compile Include="Fragments\fragMainPage.cs" />
     <Compile Include="Fragments\fragHome.cs" />
+    <Compile Include="Fragments\fragPDFViewer.cs" />
     <Compile Include="Fragments\fragSubjectView.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -97,6 +101,15 @@
     <Compile Include="Services\IServiceDelegates.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Contract.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Microsoft_Press_eBook_CreatingMobileAppswithXamarinForms_PDF.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\compressedtracemonkey_pldi_09.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidAsset>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -115,6 +128,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\uiSubjectView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\uiPDF.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
