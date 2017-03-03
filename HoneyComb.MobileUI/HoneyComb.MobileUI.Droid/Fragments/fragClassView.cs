@@ -24,6 +24,20 @@ namespace HoneyComb.MobileUI.Droid.Fragments
         CalendarView _simpleCalendarView;
         PDFView PDFView { get; set; }
 
+        Button _btbSub1;
+        Button _btbSub2;
+        Button _btbSub3;
+        Button _btbSub4;
+        Button _btbSub5;
+        Button _btbSub6;
+        Button _btbSub7;
+        Button _btbSub8;
+        Button _btbSub9;
+        Button _btbSub10;
+        Button _btbSub11;
+        Button _btbSub12;
+      
+
         Button _btnBookView;
         Button _btnBook2View;
         Button _btnBook3View;
@@ -47,7 +61,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
         private void load()
         {
 
-            PDFView.FromAsset("Contract.pdf")
+            PDFView.FromAsset("Life_Skills_Sesotho_GrR_FS.pdf")
                 .DefaultPage(1)
                 .OnPageChange(this)
                 .EnableDoubletap(true)    
@@ -71,6 +85,34 @@ namespace HoneyComb.MobileUI.Droid.Fragments
 
             PDFView = view.FindViewById<PDFView>(Resource.Id.pdfView1);
 
+
+
+            _btbSub1 = view.FindViewById<Button>(Resource.Id.btnSub1);
+            _btbSub1.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub1.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub2 = view.FindViewById<Button>(Resource.Id.btnSub2);
+            _btbSub2.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub2.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub3 = view.FindViewById<Button>(Resource.Id.btnSub3);
+            _btbSub3.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub3.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub4 = view.FindViewById<Button>(Resource.Id.btnSub4);
+            _btbSub4.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub4.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub5 = view.FindViewById<Button>(Resource.Id.btnSub5);
+            _btbSub5.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub5.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub6 = view.FindViewById<Button>(Resource.Id.btnSub6);
+            _btbSub6.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub6.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub7 = view.FindViewById<Button>(Resource.Id.btnSub7);
+            _btbSub7.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub7.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub8 = view.FindViewById<Button>(Resource.Id.btnSub8);
+            _btbSub8.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub8.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub9 = view.FindViewById<Button>(Resource.Id.btnSub9);
+            _btbSub9.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub9.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub10 = view.FindViewById<Button>(Resource.Id.btnSub1);
+            _btbSub10.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub10.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub11 = view.FindViewById<Button>(Resource.Id.btnSub11);
+            _btbSub11.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub11.Text + "No implementation", ToastLength.Long).Show(); };
+            _btbSub12 = view.FindViewById<Button>(Resource.Id.btnSub12);
+            _btbSub12.Click += (o, e) => { Toast.MakeText(this.Context, _btbSub12.Text + "No implementation", ToastLength.Long).Show(); };
+
+
             _simpleCalendarView = view.FindViewById<CalendarView>(Resource.Id.simpleCalendarView); // get the reference of CalendarView
             _simpleCalendarView.FocusedMonthDateColor = Android.Graphics.Color.Red;
             _simpleCalendarView.UnfocusedMonthDateColor = Android.Graphics.Color.Blue; // set the yellow color for the dates of an unfocused month
@@ -84,7 +126,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
 
             _btnBook2View.Click += (o, e) =>
             {
-                _dialog = new fragPDFViewer("Microsoft_Press_eBook_CreatingMobileAppswithXamarinForms_PDF.pdf");
+                _dialog = new fragPDFViewer("CAPS_SAL_XITSONGA_FP.pdf");
 
                 var trans = FragmentManager.BeginTransaction();
                 _dialog.Show(trans, "book1");
@@ -93,7 +135,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
             _btnBook3View.Click += (o, e) =>
             {
 
-                _dialog = new fragPDFViewer("compressedtracemonkey_pldi_09.pdf");
+                _dialog = new fragPDFViewer("CAPS_SAL_Akrikaans_FP.pdf");
 
                 var trans = FragmentManager.BeginTransaction();
                 _dialog.Show(trans, "book1");
@@ -108,7 +150,7 @@ namespace HoneyComb.MobileUI.Droid.Fragments
 
         private void _btnBookView_Click(object sender, EventArgs e)
         {
-            _dialog = new fragPDFViewer("Contract.pdf");
+            _dialog = new fragPDFViewer("Life_Skills_Sesotho_GrR_FS.pdf");
 
             var trans = FragmentManager.BeginTransaction();
             _dialog.Show(trans, "book1");

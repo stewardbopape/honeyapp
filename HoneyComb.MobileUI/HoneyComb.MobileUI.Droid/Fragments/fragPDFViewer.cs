@@ -65,11 +65,19 @@ namespace HoneyComb.MobileUI.Droid.Fragments
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
+            Dialog.Window.SetTitle("Book " + PDFPath);
+
             View view = inflater.Inflate(Resource.Layout.uiPDF, container, false);
             _mainActivity = (MainActivity)this.Activity;
             PDFView = view.FindViewById<PDFView>(Resource.Id.pdfView1);
 
             return view;
+        }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            PDFView = null;
         }
 
         public void OnPageChanged(int p0, int p1)

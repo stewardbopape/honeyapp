@@ -19,62 +19,62 @@
                 android:text="Class: Mathematics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button1" />
+                android:id="@+id/btnSub1" />
             <Button
                 android:text="Class: English 1st Language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button2" />
+                android:id="@+id/btnSub2" />
             <Button
                 android:text="Class: Life Skills"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button3" />
+                android:id="@+id/btnSub3" />
             <Button
                 android:text="Class: Technology"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button4" />
+                android:id="@+id/btnSub4" />
             <Button
                 android:text="Class: Afrikaans"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button5" />
+                android:id="@+id/btnSub5" />
             <Button
                 android:text="Class: Physics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button6" />
+                android:id="@+id/btnSub6" />
             <Button
                 android:text="Class: Additional Subject1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button7" />
+                android:id="@+id/btnSub7" />
             <Button
                 android:text="Class: Additional Subject2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button8" />
+                android:id="@+id/btnSub8" />
             <Button
                 android:text="Class: Additional Subject1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button9" />
+                android:id="@+id/btnSub9" />
             <Button
                 android:text="Class: Additional Subject2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button10" />
+                android:id="@+id/btnSub10" />
             <Button
                 android:text="Class: Additional Subject1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button11" />
+                android:id="@+id/btnSub11" />
             <Button
                 android:text="Class: Additional Subject2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/button12" />
+                android:id="@+id/btnSub12" />
         </LinearLayout>
     </HorizontalScrollView>
 <!--parent container-->
@@ -129,17 +129,17 @@
                     android:layout_width="wrap_content"
                     android:background="@drawable/customborder">
                     <Button
-                        android:text="Class: Life Skills"
+                        android:text="Life Skills Sesotho"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBook" />
                     <Button
-                        android:text="Class: Life Skills"
+                        android:text="Xitsonga Book"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBook2" />
                     <Button
-                        android:text="Class: Life Skills"
+                        android:text="Afrikaans Book"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/btnBook3" />

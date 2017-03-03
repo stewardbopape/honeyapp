@@ -75,6 +75,7 @@ namespace HoneyComb.MobileUI.Droid
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetDisplayShowTitleEnabled(true);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.Hide();
             mDrawerToggle.SyncState();
 
             SupportActionBar.Title = "PSU Upate";
@@ -90,8 +91,10 @@ namespace HoneyComb.MobileUI.Droid
             }
             else
             {
+                SupportActionBar.Show();
                 mToolbar.Visibility = ViewStates.Visible;
                 mDrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
+             
             }
         }
 

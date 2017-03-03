@@ -101,13 +101,13 @@
     <Compile Include="Services\IServiceDelegates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Contract.pdf">
+    <AndroidAsset Include="Assets\CAPS_SAL_Akrikaans_FP.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="Assets\Microsoft_Press_eBook_CreatingMobileAppswithXamarinForms_PDF.pdf">
+    <AndroidAsset Include="Assets\CAPS_SAL_XITSONGA_FP.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
-    <AndroidAsset Include="Assets\compressedtracemonkey_pldi_09.pdf">
+    <AndroidAsset Include="Assets\Life_Skills_Sesotho_GrR_FS.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
     <None Include="packages.config" />

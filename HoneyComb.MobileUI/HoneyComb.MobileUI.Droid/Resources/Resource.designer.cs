@@ -1984,8 +1984,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f06003c
 			public const int action_mode_close_button = 2131099708;
 			
-			// aapt resource value: 0x7f0600b0
-			public const int action_sync = 2131099824;
+			// aapt resource value: 0x7f0600bc
+			public const int action_sync = 2131099836;
 			
 			// aapt resource value: 0x7f06003d
 			public const int activity_chooser_view_content = 2131099709;
@@ -2021,49 +2021,85 @@ namespace HoneyComb.MobileUI.Droid
 			public const int btnLogin = 2131099812;
 			
 			// aapt resource value: 0x7f060085
-			public const int button1 = 2131099781;
+			public const int btnSub1 = 2131099781;
 			
 			// aapt resource value: 0x7f06008e
-			public const int button10 = 2131099790;
+			public const int btnSub10 = 2131099790;
 			
 			// aapt resource value: 0x7f06008f
-			public const int button11 = 2131099791;
+			public const int btnSub11 = 2131099791;
 			
 			// aapt resource value: 0x7f060090
-			public const int button12 = 2131099792;
+			public const int btnSub12 = 2131099792;
 			
 			// aapt resource value: 0x7f060086
-			public const int button2 = 2131099782;
+			public const int btnSub2 = 2131099782;
 			
 			// aapt resource value: 0x7f060087
-			public const int button3 = 2131099783;
-			
-			// aapt resource value: 0x7f0600a6
-			public const int button31 = 2131099814;
-			
-			// aapt resource value: 0x7f0600a7
-			public const int button32 = 2131099815;
-			
-			// aapt resource value: 0x7f0600a8
-			public const int button33 = 2131099816;
+			public const int btnSub3 = 2131099783;
 			
 			// aapt resource value: 0x7f060088
-			public const int button4 = 2131099784;
+			public const int btnSub4 = 2131099784;
 			
 			// aapt resource value: 0x7f060089
-			public const int button5 = 2131099785;
+			public const int btnSub5 = 2131099785;
 			
 			// aapt resource value: 0x7f06008a
-			public const int button6 = 2131099786;
+			public const int btnSub6 = 2131099786;
 			
 			// aapt resource value: 0x7f06008b
-			public const int button7 = 2131099787;
+			public const int btnSub7 = 2131099787;
 			
 			// aapt resource value: 0x7f06008c
-			public const int button8 = 2131099788;
+			public const int btnSub8 = 2131099788;
 			
 			// aapt resource value: 0x7f06008d
-			public const int button9 = 2131099789;
+			public const int btnSub9 = 2131099789;
+			
+			// aapt resource value: 0x7f0600a6
+			public const int button1 = 2131099814;
+			
+			// aapt resource value: 0x7f0600af
+			public const int button10 = 2131099823;
+			
+			// aapt resource value: 0x7f0600b0
+			public const int button11 = 2131099824;
+			
+			// aapt resource value: 0x7f0600b1
+			public const int button12 = 2131099825;
+			
+			// aapt resource value: 0x7f0600a7
+			public const int button2 = 2131099815;
+			
+			// aapt resource value: 0x7f0600a8
+			public const int button3 = 2131099816;
+			
+			// aapt resource value: 0x7f0600b2
+			public const int button31 = 2131099826;
+			
+			// aapt resource value: 0x7f0600b3
+			public const int button32 = 2131099827;
+			
+			// aapt resource value: 0x7f0600b4
+			public const int button33 = 2131099828;
+			
+			// aapt resource value: 0x7f0600a9
+			public const int button4 = 2131099817;
+			
+			// aapt resource value: 0x7f0600aa
+			public const int button5 = 2131099818;
+			
+			// aapt resource value: 0x7f0600ab
+			public const int button6 = 2131099819;
+			
+			// aapt resource value: 0x7f0600ac
+			public const int button7 = 2131099820;
+			
+			// aapt resource value: 0x7f0600ad
+			public const int button8 = 2131099821;
+			
+			// aapt resource value: 0x7f0600ae
+			public const int button9 = 2131099822;
 			
 			// aapt resource value: 0x7f060044
 			public const int buttonPanel = 2131099716;
@@ -2083,8 +2119,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f06002d
 			public const int center_vertical = 2131099693;
 			
-			// aapt resource value: 0x7f0600ab
-			public const int centreContainer = 2131099819;
+			// aapt resource value: 0x7f0600b7
+			public const int centreContainer = 2131099831;
 			
 			// aapt resource value: 0x7f060052
 			public const int checkbox = 2131099730;
@@ -2203,8 +2239,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f06002f
 			public const int left = 2131099695;
 			
-			// aapt resource value: 0x7f0600aa
-			public const int leftMenuContainer = 2131099818;
+			// aapt resource value: 0x7f0600b6
+			public const int leftMenuContainer = 2131099830;
 			
 			// aapt resource value: 0x7f06007c
 			public const int line1 = 2131099772;
@@ -2218,11 +2254,11 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060041
 			public const int list_item = 2131099713;
 			
-			// aapt resource value: 0x7f0600b6
-			public const int log_out = 2131099830;
+			// aapt resource value: 0x7f0600c2
+			public const int log_out = 2131099842;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int mainContentContainer = 2131099817;
+			// aapt resource value: 0x7f0600b5
+			public const int mainContentContainer = 2131099829;
 			
 			// aapt resource value: 0x7f06007a
 			public const int media_actions = 2131099770;
@@ -2236,17 +2272,17 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060016
 			public const int multiply = 2131099670;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int my_id3 = 2131099825;
+			// aapt resource value: 0x7f0600bd
+			public const int my_id3 = 2131099837;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int my_id4 = 2131099827;
+			// aapt resource value: 0x7f0600bf
+			public const int my_id4 = 2131099839;
 			
-			// aapt resource value: 0x7f0600b5
-			public const int my_id5 = 2131099829;
+			// aapt resource value: 0x7f0600c1
+			public const int my_id5 = 2131099841;
 			
-			// aapt resource value: 0x7f0600b7
-			public const int my_id8 = 2131099831;
+			// aapt resource value: 0x7f0600c3
+			public const int my_id8 = 2131099843;
 			
 			// aapt resource value: 0x7f060076
 			public const int nav_view = 2131099766;
@@ -2266,8 +2302,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060099
 			public const int noteContainer = 2131099801;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int outlets = 2131099826;
+			// aapt resource value: 0x7f0600be
+			public const int outlets = 2131099838;
 			
 			// aapt resource value: 0x7f060028
 			public const int parallax = 2131099688;
@@ -2293,11 +2329,11 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060054
 			public const int radio = 2131099732;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int recommendedBooksContainer = 2131099822;
+			// aapt resource value: 0x7f0600ba
+			public const int recommendedBooksContainer = 2131099834;
 			
-			// aapt resource value: 0x7f0600ad
-			public const int recommendedVideosContainer = 2131099821;
+			// aapt resource value: 0x7f0600b9
+			public const int recommendedVideosContainer = 2131099833;
 			
 			// aapt resource value: 0x7f060030
 			public const int right = 2131099696;
@@ -2353,8 +2389,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060068
 			public const int select_dialog_listview = 2131099752;
 			
-			// aapt resource value: 0x7f0600ac
-			public const int sharedNoteContainer = 2131099820;
+			// aapt resource value: 0x7f0600b8
+			public const int sharedNoteContainer = 2131099832;
 			
 			// aapt resource value: 0x7f060053
 			public const int shortcut = 2131099731;
@@ -2410,8 +2446,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060065
 			public const int submit_area = 2131099749;
 			
-			// aapt resource value: 0x7f0600af
-			public const int suggestedBooksContainer = 2131099823;
+			// aapt resource value: 0x7f0600bb
+			public const int suggestedBooksContainer = 2131099835;
 			
 			// aapt resource value: 0x7f060095
 			public const int tabContainer = 2131099797;
@@ -2479,8 +2515,8 @@ namespace HoneyComb.MobileUI.Droid
 			// aapt resource value: 0x7f060014
 			public const int useLogo = 2131099668;
 			
-			// aapt resource value: 0x7f0600b4
-			public const int verify_collection = 2131099828;
+			// aapt resource value: 0x7f0600c0
+			public const int verify_collection = 2131099840;
 			
 			// aapt resource value: 0x7f06000a
 			public const int view_offset_helper = 2131099658;
